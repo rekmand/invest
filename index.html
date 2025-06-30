@@ -3,97 +3,246 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RekmandInvestment</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Rekmand - Professional Mutual Fund Management and Investment Services.">
+    <meta name="keywords" content="Mutual Fund, Investment, Portfolio Management, Financial Planning, Rekmand">
+    <meta name="author" content="Rekmand">
+    <meta property="og:title" content="Rekmand Investment">
+    <meta property="og:description" content="Expert mutual fund management with personalized service.">
+    <meta property="og:image" content="images/logo.png">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <title>Rekmand Investment</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="scc/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
-    <header class="bg-primary text-white text-center py-3">
+    <header class="bg-primary text-white text-center py-3 header-custom">
         <div class="container d-flex align-items-center">
-            <img src="images/logo.png" alt="Logo" class="logo me-3">
+            <img src="images/logo.png" alt="Rekmand Logo" class="logo me-3" style="width:70px;height:70px;object-fit:contain;background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.10);padding:4px;">
             <div class="ms-auto text-start">
-                <h1 class="h4 mb-0">Rekmand</h1>
-                <p class="mb-0">Professional Mutual Fund Management</p>
+                <h1 class="h3 mb-0 fw-bold header-title">Rekmand</h1>
+                <p class="mb-0 header-subtitle">Professional Mutual Fund Management</p>
             </div>
         </div>
     </header>
 
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger shadow-lg navbar-custom">
         <div class="container">
-            <a class="navbar-brand" href="#home">Home</a>
+            <a class="navbar-brand fw-bold text-warning-emphasis navbar-brand-custom" href="#home">Home</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
-                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link vibrant-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link vibrant-link" href="#contact">Contact</a></li>
 
                     <!-- NJ Dropdown -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="njDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">NJ Portal</a>
-                        <ul class="dropdown-menu" aria-labelledby="njDropdown">
+                        <a class="nav-link dropdown-toggle vibrant-link" href="#" id="njDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">NJ Portal</a>
+                        <ul class="dropdown-menu animate__animated animate__fadeInDown" aria-labelledby="njDropdown">
                             <li><a class="dropdown-item" href="https://ewa.njindiaonline.com/ewa/login" target="_blank">NJ E-Wealth</a></li>
                             <li><a class="dropdown-item" href="https://www.njindiaonline.in/cdesk/login.fin" target="_blank">NJ Client Desk</a></li>
                         </ul>
                     </li>
 
                     <!-- Prudent Link -->
-                    <li class="nav-item"><a class="nav-link" href="https://www.prudentcorporate.com/ccd/index.aspx" target="_blank">Prudent Client Desk</a></li>
+                    <li class="nav-item"><a class="nav-link vibrant-link" href="https://www.prudentcorporate.com/ccd/index.aspx" target="_blank">Prudent Client Desk</a></li>
 
                     <!-- FundzBazzar Dropdown -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="fundzDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">FundzBazzar Portal</a>
-                        <ul class="dropdown-menu" aria-labelledby="fundzDropdown">
+                        <a class="nav-link dropdown-toggle vibrant-link" href="#" id="fundzDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">FundzBazzar Portal</a>
+                        <ul class="dropdown-menu animate__animated animate__fadeInDown" aria-labelledby="fundzDropdown">
                             <li><a class="dropdown-item" href="https://www.fundzbazar.com/signin" target="_blank">FundzBazzar Signin</a></li>
                             <li><a class="dropdown-item" href="https://broking.fundzbazar.com/" target="_blank">FundzBazzar Broking</a></li>
                         </ul>
                     </li>
                     
                     <!-- Amfiindia Link -->
-                    <li class="nav-item"><a class="nav-link" href="https://www.amfiindia.com/" target="_blank">Amfiindia</a></li>
+                    <li class="nav-item"><a class="nav-link vibrant-link" href="https://www.amfiindia.com/" target="_blank">Amfiindia</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <section class="hero py-5 bg-light text-center" id="home">
+    <section class="hero py-5 text-center position-relative overflow-hidden" id="home">
+        <div class="container position-relative z-2">
+            <h2 class="display-4 fw-bold mb-3">Welcome to Rekmand</h2>
+            <p class="lead mb-4">Expert mutual fund management with personalized service</p>
+            <div class="d-flex flex-column flex-md-row justify-content-center gap-3 mt-4">
+                <a href="#services" class="btn btn-danger btn-lg px-4 shadow vibrant-link">Explore Mutual Funds</a>
+                <a href="#contact" class="btn btn-warning btn-lg px-4 shadow vibrant-link">Start Investing Today</a>
+            </div>
+        </div>
+        <img src="images/Financial_Planning.png" alt="Financial Planning" class="position-absolute bottom-0 end-0 d-none d-md-block">
+    </section>
+
+    <!-- Market Overview Section -->
+    <section class="market-overview py-4 bg-white border-top border-bottom">
         <div class="container">
-            <h2>Welcome to Rekmand</h2>
-            <p class="lead">Expert mutual fund management with personalized service</p>
-            <!-- <img src="hero-image.jpg" alt="Welcome Image" class="img-fluid mt-4"> -->
+            <h3 class="mb-4 text-center fw-bold">Market Overview</h3>
+            <div class="row justify-content-center align-items-center g-4">
+                <div class="col-md-4">
+                    <div class="card shadow-sm border-0 text-center">
+                        <div class="card-body">
+                            <h5 class="card-title mb-2">Nifty 50</h5>
+                            <div id="nifty-ticker" class="market-ticker mb-2">Loading...</div>
+                            <div id="nifty-chart" style="height: 80px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card shadow-sm border-0 text-center">
+                        <div class="card-body">
+                            <h5 class="card-title mb-2">Sensex</h5>
+                            <div id="sensex-ticker" class="market-ticker mb-2">Loading...</div>
+                            <div id="sensex-chart" style="height: 80px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card shadow-sm border-0 text-center">
+                        <div class="card-body">
+                            <h5 class="card-title mb-2">Global Indices</h5>
+                            <div id="global-ticker" class="market-ticker mb-2">Loading...</div>
+                            <div id="global-chart" style="height: 80px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="services py-5" id="services">
+    <!-- Available Mutual Funds Section -->
+    <section class="mutual-funds py-5 bg-light">
         <div class="container">
-            <h2 class="text-center mb-4">Our Services</h2>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card shadow-lg text-center">
-                        <img src="images/Mutual_Fund_Investment.jpeg" class="card-img-top mx-auto" alt="Mutual Fund Investment" style="height: 250px; width: 250px; object-fit: cover; display: block;">
-                        <div class="card-body">
-                            <h5 class="card-title">Mutual Fund Investment</h5>
-                            <p class="card-text">Professional guidance for your mutual fund investments with proven strategies.</p>
+            <h3 class="mb-4 text-center fw-bold">Available Mutual Funds</h3>
+            <div class="row justify-content-center">
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm border-0 h-100">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Axis Bluechip Fund</h5>
+                            <p class="mb-1"><strong>Type:</strong> Equity Large Cap</p>
+                            <p class="mb-1"><strong>3Y Returns:</strong> 15.2%</p>
+                            <p class="mb-1"><strong>Risk:</strong> Moderate</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card shadow-lg text-center">
-                        <img src="images/Portfolio_Management.png" class="card-img-top mx-auto" alt="Portfolio Management" style="height: 250px; width: 250px; object-fit: cover;">
-                        <div class="card-body">
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm border-0 h-100">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">HDFC Mid-Cap Opportunities</h5>
+                            <p class="mb-1"><strong>Type:</strong> Equity Mid Cap</p>
+                            <p class="mb-1"><strong>3Y Returns:</strong> 19.8%</p>
+                            <p class="mb-1"><strong>Risk:</strong> High</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm border-0 h-100">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">ICICI Prudential Balanced Advantage</h5>
+                            <p class="mb-1"><strong>Type:</strong> Hybrid</p>
+                            <p class="mb-1"><strong>3Y Returns:</strong> 11.5%</p>
+                            <p class="mb-1"><strong>Risk:</strong> Low</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section class="tools-section py-5">
+        <div class="container">
+            <h3 class="mb-4 text-center fw-bold">Investment Tools</h3>
+            <div class="row justify-content-center g-4">
+                <div class="col-md-3 col-6">
+                    <div class="card shadow-sm border-0 h-100 text-center tool-card">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            <span class="tool-icon mb-2">📈</span>
+                            <h5 class="card-title">SIP Calculator</h5>
+                            <p class="card-text small">Estimate your returns from monthly SIP investments.</p>
+                            <a href="#" class="btn btn-outline-primary btn-sm mt-auto disabled">Coming Soon</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="card shadow-sm border-0 h-100 text-center tool-card">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            <span class="tool-icon mb-2">💰</span>
+                            <h5 class="card-title">Lumpsum Calculator</h5>
+                            <p class="card-text small">Calculate future value of a one-time investment.</p>
+                            <a href="#" class="btn btn-outline-primary btn-sm mt-auto disabled">Coming Soon</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="card shadow-sm border-0 h-100 text-center tool-card">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            <span class="tool-icon mb-2">🛡️</span>
+                            <h5 class="card-title">Risk Profiler</h5>
+                            <p class="card-text small">Assess your risk profile for better investment decisions.</p>
+                            <a href="#" class="btn btn-outline-primary btn-sm mt-auto disabled">Coming Soon</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="card shadow-sm border-0 h-100 text-center tool-card">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            <span class="tool-icon mb-2">🎯</span>
+                            <h5 class="card-title">Goal Planning</h5>
+                            <p class="card-text small">Plan and track your financial goals with ease.</p>
+                            <a href="#" class="btn btn-outline-primary btn-sm mt-auto disabled">Coming Soon</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section py-5" id="services">
+        <div class="container">
+            <h2 class="text-center mb-4 fw-bold">Our Services</h2>
+            <div class="row justify-content-center g-4">
+                <div class="col-md-3 col-6">
+                    <div class="card shadow-sm border-0 h-100 text-center service-card">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            <span class="service-icon mb-3">💼</span>
                             <h5 class="card-title">Portfolio Management</h5>
-                            <p class="card-text">Customized portfolio management tailored to your financial goals.</p>
+                            <p class="card-text small">Customized portfolio strategies to help you achieve your financial goals with confidence.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card shadow-lg text-center">
-                        <img src="images/Financial_Planning.png" class="card-img-top mx-auto" alt="Financial Planning" style="height: 250px; width: 250px; object-fit: cover;">
-                        <div class="card-body">
+                <div class="col-md-3 col-6">
+                    <div class="card shadow-sm border-0 h-100 text-center service-card">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            <span class="service-icon mb-3">📊</span>
+                            <h5 class="card-title">Mutual Fund Investment</h5>
+                            <p class="card-text small">Expert guidance for investing in top-performing mutual funds tailored to your needs.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="card shadow-sm border-0 h-100 text-center service-card">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            <span class="service-icon mb-3">📝</span>
                             <h5 class="card-title">Financial Planning</h5>
-                            <p class="card-text">Comprehensive financial planning for your secure future.</p>
+                            <p class="card-text small">Comprehensive financial planning for a secure and prosperous future.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="card shadow-sm border-0 h-100 text-center service-card">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            <span class="service-icon mb-3">🤝</span>
+                            <h5 class="card-title">Personalized Advisory</h5>
+                            <p class="card-text small">One-on-one advisory to help you make informed investment decisions at every step.</p>
                         </div>
                     </div>
                 </div>
@@ -103,21 +252,65 @@
     
 
     <!-- About Us Section -->
-    <section class="about-us py-5 bg-light" id="about">
+    <section class="about-us-section py-5 bg-light" id="about">
         <div class="container">
-            <h2 class="text-center mb-4">About Us</h2>
-            <p class="text-center mb-4">Rekmand Mutual Fund Services was founded with the mission to help individuals and families achieve financial freedom through informed and strategic investment management. We are passionate about helping you grow and protect your wealth with expert guidance tailored to your unique financial goals.</p>
-            <p class="text-center">With years of experience and a commitment to exceptional service, we work alongside our clients as trusted advisors, offering transparency, reliability, and proven strategies for a successful financial future.</p>
+            <div class="row align-items-center g-4">
+                <div class="col-md-6 text-center text-md-start">
+                    <img src="images/Financial_Planning.png" alt="About Rekmand" class="img-fluid rounded shadow about-img mb-4 mb-md-0" style="max-width: 350px;">
+                </div>
+                <div class="col-md-6">
+                    <h2 class="fw-bold mb-3 text-primary">About Us</h2>
+                    <p class="lead mb-3">Rekmand Mutual Fund Services is dedicated to empowering individuals and families to achieve financial freedom through expert, transparent, and personalized investment management.</p>
+                    <ul class="list-unstyled mb-3">
+                        <li class="mb-2"><span class="about-icon">🌟</span> <strong>Client-Centric Approach:</strong> Your goals and needs are at the heart of our strategies.</li>
+                        <li class="mb-2"><span class="about-icon">📈</span> <strong>Proven Expertise:</strong> Years of experience in mutual funds, portfolio management, and financial planning.</li>
+                        <li class="mb-2"><span class="about-icon">🤝</span> <strong>Trusted Partnership:</strong> We work alongside you as reliable advisors for every financial milestone.</li>
+                        <li class="mb-2"><span class="about-icon">🔒</span> <strong>Transparency & Integrity:</strong> Clear communication and ethical practices in all we do.</li>
+                    </ul>
+                    <p class="mb-0">Let us help you grow, protect, and enjoy your wealth with confidence and peace of mind.</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="contact-info py-5" id="contact">
-        <div class="container text-center">
-            <h2>Get in Touch</h2>
-            <p>Ready to start your investment journey? Contact me directly:</p>
-            <div class="contact-details d-inline-block p-4 bg-white rounded shadow-sm mt-3">
-                <a href="tel:+918826155883" class="d-block text-dark mb-2">📱 +91 8826155883</a>
-                <a href="mailto:mandal.rekha@gmail.com" class="d-block text-dark">📧 mandal.rekha@gmail.com</a>
+    <section class="contact-section py-5 bg-light" id="contact">
+        <div class="container">
+            <h2 class="text-center mb-4 fw-bold">Get in Touch</h2>
+            <div class="row g-4 align-items-center">
+                <div class="col-md-5">
+                    <div class="contact-details p-4 bg-white rounded shadow-sm mb-4 mb-md-0">
+                        <h5 class="mb-3">Contact Information</h5>
+                        <p class="mb-2"><span class="contact-icon">📧</span> <a href="mailto:mandal.rekha@gmail.com" class="text-dark">mandal.rekha@gmail.com</a></p>
+                        <p class="mb-2"><span class="contact-icon">📱</span> <a href="tel:+918826155883" class="text-dark">+91 8826155883</a></p>
+                        <p class="mb-2 text-muted"><span class="contact-icon">📍</span> <em>Physical address coming soon</em></p>
+                    </div>
+                    <div class="map-responsive mt-4 text-center">
+                        <div class="alert alert-info mb-0" role="alert" style="border-radius:12px;">Map integration coming soon</div>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="card shadow-sm border-0 p-4 h-100">
+                        <h5 class="mb-3">Contact Form</h5>
+                        <form>
+                            <div class="mb-3 text-start">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="mb-3 text-start">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="you@email.com" required>
+                            </div>
+                            <div class="mb-3 text-start">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" rows="4" placeholder="How can we help you?" required></textarea>
+                            </div>
+                            <div class="text-end">
+                                <button type="submit" class="btn btn-primary px-4" disabled>Send Message</button>
+                                <small class="d-block mt-2 text-muted">(Demo only)</small>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -127,5 +320,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
