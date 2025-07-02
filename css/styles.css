@@ -1,175 +1,48 @@
-/* Custom styles */
+/* Custom styles and animations */
 
-.hero img {
-    max-width: 100%;
-    height: auto;
-}
-
-.contact-details a {
-    font-size: 1.2rem;
-    color: #1a437c;
-    text-decoration: none;
+body {
+    font-family: 'Poppins', sans-serif;
 }
 
-.contact-details a:hover {
-    text-decoration: underline;
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
-.card img {
-    height: 200px;
-    object-fit: cover;
+@keyframes slide-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-footer p {
-    margin: 0;
-    font-size: 0.9rem;
+.animate-fade-in {
+    animation: fade-in 0.6s ease-out forwards;
 }
 
-/* styles.css */
-.logo {
-    width: 60px;
-    height: 60px;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-    background: #fff;
-    padding: 4px;
-}
-.hero {
-    background-color: #f5f5f5;
+.animate-slide-up {
+    animation: slide-up 0.6s ease-out forwards;
 }
 
-/* Enhanced Header Styles */
-header.bg-primary {
-    background: linear-gradient(90deg, #1976d2 0%, #42a5f5 100%);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-}
-header h1 {
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-}
-header p {
-    font-size: 1.1rem;
-    color: #e3f2fd;
-}
-
-/* Enhanced Navbar Styles */
-.navbar {
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-.navbar-brand {
-    font-weight: 600;
-    font-size: 1.2rem;
-    letter-spacing: 1px;
-}
-.navbar-nav .nav-link {
-    font-size: 1.05rem;
-    padding: 0.7rem 1.2rem;
-    border-radius: 6px;
-    transition: background 0.2s, color 0.2s;
-}
-.navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link:hover {
-    background: #ffe0e0;
-    color: #b71c1c !important;
-}
-
-/* Vibrant Navbar Link Styles */
-.vibrant-link {
-    color: #fff !important;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-    border-radius: 8px;
-    margin: 0 2px;
-    text-shadow: 0 2px 8px #b71c1c33, 0 1px 2px #fff7;
-}
-.vibrant-link:hover, .vibrant-link:focus, .vibrant-link.active {
-    background: linear-gradient(90deg, #fffde7 0%, #ffe0e0 100%);
-    color: #d32f2f !important;
-    box-shadow: 0 2px 12px #ff525233;
-    text-shadow: none;
-}
-
-/* Animate.css overrides for dropdowns */
-.dropdown-menu.animate__animated {
-    --animate-duration: 0.4s;
-}
-
-/* Hero Section Styles */
-.hero {
-    background: linear-gradient(90deg, #e3f2fd 0%, #fffde7 100%);
-    font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
-    position: relative;
-    overflow: hidden;
-}
-.hero .display-4 {
-    color: #1976d2;
-    text-shadow: 0 2px 12px #90caf9aa;
-}
-.hero .lead {
-    color: #b71c1c;
-    font-size: 1.35rem;
-}
-.hero .btn {
-    font-weight: 600;
-    border-radius: 2rem;
-    letter-spacing: 1px;
-    box-shadow: 0 2px 8px #b71c1c22;
-}
-.hero .btn-warning {
-    color: #b71c1c !important;
-}
-.hero img.position-absolute {
-    max-width: 340px;
-    opacity: 0.18;
-    pointer-events: none;
-    z-index: 1;
-    bottom: 0;
-    right: 0;
-}
-
-/* Market Overview Section Styles */
-.market-overview {
-    font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
-    background: #fff;
-    border-top: 1px solid #e3f2fd;
-    border-bottom: 1px solid #ffe0e0;
-}
-.market-overview h3 {
-    color: #1976d2;
-    font-weight: 700;
-}
-.market-overview .card {
-    border-radius: 1.2rem;
-    background: linear-gradient(90deg, #f5fafd 0%, #fffde7 100%);
-    box-shadow: 0 2px 12px #b71c1c11;
-}
-.market-ticker {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-}
-
-/* Header and Navbar Custom Styles */
-.header-custom {
-    font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
-    letter-spacing: 0.5px;
-}
-.header-title {
-    font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
-    letter-spacing: 1px;
-}
-.header-subtitle {
-    font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
-    font-size: 1.15rem;
-    color: #e3f2fd;
-}
-
-.navbar-custom {
-    font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
-    background: linear-gradient(90deg, #d32f2f 0%, #ff5252 100%) !important;
-}
-.navbar-brand-custom {
-    font-size: 1.4rem;
-    letter-spacing: 1px;
-    text-shadow: 1px 1px 8px #fff7, 0 2px 8px #b71c1c33;
-}
+/* Custom animation delays */
+.animation-delay-100 { animation-delay: 0.1s; }
+.animation-delay-200 { animation-delay: 0.2s; }
+.animation-delay-300 { animation-delay: 0.3s; }
+.animation-delay-400 { animation-delay: 0.4s; }
+.animation-delay-500 { animation-delay: 0.5s; }
+.animation-delay-600 { animation-delay: 0.6s; }
+.animation-delay-700 { animation-delay: 0.7s; }
+.animation-delay-800 { animation-delay: 0.8s; }
+.animation-delay-900 { animation-delay: 0.9s; }
+.animation-delay-1000 { animation-delay: 1s; }
+.animation-delay-1200 { animation-delay: 1.2s; }
+.animation-delay-1400 { animation-delay: 1.4s; }
+.animation-delay-1600 { animation-delay: 1.6s; }

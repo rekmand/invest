@@ -1,35 +1,152 @@
-document.addEventListener("DOMContentLoaded", () => {
-    console.log("Welcome to Rekmand ! Let us know if you need any assistance.");
+document.addEventListener('DOMContentLoaded', () => {
+    fetchMarketSummary();
+    fetchTopFunds();
+    const API_BASE_URL = 'http://127.0.0.1:8000/api';
 
-    // Static demo data for now
-    const nifty = { name: 'Nifty 50', value: 23450.25, change: +120.45, percent: +0.52, data: [23200, 23300, 23350, 23400, 23450] };
-    const sensex = { name: 'Sensex', value: 78200.10, change: -80.15, percent: -0.10, data: [78300, 78250, 78200, 78250, 78200] };
-    const global = { name: 'Global', value: 15500.00, change: +50.00, percent: +0.32, data: [15400, 15450, 15500, 15480, 15500] };
+    AOS.init();
 
-    function setTicker(id, info) {
-        const el = document.getElementById(id);
-        if (el) {
-            el.innerHTML = `<span style='font-weight:600;'>${info.value.toLocaleString()}</span> <span style='color:${info.change>=0?'#388e3c':'#d32f2f'}; font-weight:600;'>${info.change>=0?'+':''}${info.change} (${info.percent>=0?'+':''}${info.percent}%)</span>`;
+    // Handle calculator modal display
+    const calculatorModal = document.getElementById('calculatorModal');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const calculatorButtons = document.querySelectorAll('.calculator-btn');
+
+    calculatorButtons.forEach(button => {
+        button.addEventListener('click', (event) => {
+            event.preventDefault();
+            calculatorModal.classList.remove('hidden');
+            calculatorModal.classList.add('flex');
+            // Trigger the show.bs.modal event manually for calculators.js
+            const showEvent = new Event('show.bs.modal', { bubbles: true, cancelable: true });
+            showEvent.relatedTarget = button;
+            calculatorModal.dispatchEvent(showEvent);
+        });
+    });
+
+    closeModalBtn.addEventListener('click', () => {
+        calculatorModal.classList.add('hidden');
+        calculatorModal.classList.remove('flex');
+    });
+
+    // Close modal when clicking outside
+    calculatorModal.addEventListener('click', (event) => {
+        if (event.target === calculatorModal) {
+            calculatorModal.classList.add('hidden');
+            calculatorModal.classList.remove('flex');
         }
-    }
-    setTicker('nifty-ticker', nifty);
-    setTicker('sensex-ticker', sensex);
-    setTicker('global-ticker', global);
+    });
 
-    function renderMiniChart(id, info, color) {
-        const options = {
-            chart: { type: 'line', height: 80, sparkline: { enabled: true } },
-            series: [{ data: info.data }],
-            stroke: { width: 3, curve: 'smooth', colors: [color] },
-            tooltip: { enabled: false },
-            grid: { show: false },
-            xaxis: { labels: { show: false } },
-            yaxis: { labels: { show: false } },
-        };
-        const chart = new ApexCharts(document.getElementById(id), options);
-        chart.render();
+    // Handle mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', (event) => {
+            event.stopPropagation(); // Prevent this click from immediately closing the menu
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
     }
-    renderMiniChart('nifty-chart', nifty, '#1976d2');
-    renderMiniChart('sensex-chart', sensex, '#d32f2f');
-    renderMiniChart('global-chart', global, '#388e3c');
+
+    // Handle dropdowns
+    const dropdowns = document.querySelectorAll('.relative.group');
+    dropdowns.forEach(dropdown => {
+        const button = dropdown.querySelector('button');
+        const menu = dropdown.querySelector('.absolute');
+
+        button.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!dropdown.contains(event.target)) {
+                menu.classList.add('hidden');
+            }
+        });
+    });
+
+    // Handle Back to Top button
+    const backToTopButton = document.getElementById('back-to-top');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 200) { // Show button after scrolling down 200px
+            backToTopButton.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+            backToTopButton.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
+        } else {
+            backToTopButton.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+            backToTopButton.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+        }
+    });
+
+    backToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // Handle contact form submission with loading indicator
+    const contactForm = document.querySelector('#contact form');
+    const contactSubmitBtn = document.getElementById('contact-submit-btn');
+    const buttonText = document.getElementById('button-text');
+    const loadingSpinner = document.getElementById('loading-spinner');
+
+    if (contactForm && contactSubmitBtn && buttonText && loadingSpinner) {
+        contactForm.addEventListener('submit', (event) => {
+            event.preventDefault(); // Prevent default form submission
+
+            // Get form inputs
+            const nameInput = contactForm.querySelector('#name');
+            const emailInput = contactForm.querySelector('#email');
+            const messageInput = contactForm.querySelector('#message');
+
+            // Basic validation
+            if (!nameInput.value.trim()) {
+                alert('Please enter your name.');
+                nameInput.focus();
+                return;
+            }
+
+            if (!emailInput.value.trim()) {
+                alert('Please enter your email address.');
+                emailInput.focus();
+                return;
+            }
+
+            // Simple email regex validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(emailInput.value.trim())) {
+                alert('Please enter a valid email address.');
+                emailInput.focus();
+                return;
+            }
+
+            if (!messageInput.value.trim()) {
+                alert('Please enter your message.');
+                messageInput.focus();
+                return;
+            }
+
+            // Show loading indicator
+            contactSubmitBtn.disabled = true;
+            buttonText.classList.add('hidden');
+            loadingSpinner.classList.remove('hidden');
+
+            // Simulate form submission (e.g., API call)
+            setTimeout(() => {
+                // Hide loading indicator
+                contactSubmitBtn.disabled = false;
+                buttonText.classList.remove('hidden');
+                loadingSpinner.classList.add('hidden');
+
+                alert('Thank you for your message! (Demo only)');
+                contactForm.reset(); // Clear the form
+            }, 2000); // Simulate a 2-second delay
+        });
+    }
 });

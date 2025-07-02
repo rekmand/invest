@@ -13,314 +13,355 @@
     <meta property="og:type" content="website">
     <link rel="icon" href="images/logo.png" type="image/png">
     <title>Rekmand Investment</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="scc/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-    <header class="bg-primary text-white text-center py-3 header-custom">
-        <div class="container d-flex align-items-center">
-            <img src="images/logo.png" alt="Rekmand Logo" class="logo me-3" style="width:70px;height:70px;object-fit:contain;background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.10);padding:4px;">
-            <div class="ms-auto text-start">
-                <h1 class="h3 mb-0 fw-bold header-title">Rekmand</h1>
-                <p class="mb-0 header-subtitle">Professional Mutual Fund Management</p>
+    <header class="bg-blue-700 text-white py-4 tracking-wide shadow-lg transition-all duration-300 ease-in-out">
+        <div class="container mx-auto flex items-center justify-between px-4">
+            <div class="flex items-center">
+                <img src="images/logo.png" alt="Rekmand Logo" class="w-16 h-16 object-contain bg-white rounded-full shadow-md p-1 mr-3 transform transition-transform duration-300 hover:scale-105" srcset="images/logo_small.png 64w, images/logo.png 256w" sizes="(max-width: 768px) 64px, (max-width: 1200px) 128px, 256px">
+                <div>
+                    <h1 class="text-3xl md:text-4xl font-bold tracking-wide">Rekmand</h1>
+                    <p class="text-sm md:text-lg text-blue-100">Professional Mutual Fund Management</p>
+                </div>
             </div>
         </div>
     </header>
 
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-danger shadow-lg navbar-custom">
-        <div class="container">
-            <a class="navbar-brand fw-bold text-warning-emphasis navbar-brand-custom" href="#home">Home</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item"><a class="nav-link vibrant-link" href="#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link vibrant-link" href="#contact">Contact</a></li>
+    <nav class="bg-red-600 shadow-xl tracking-wide sticky top-0 z-40 transition-all duration-300 ease-in-out">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a class="text-yellow-300 font-bold text-xl md:text-2xl tracking-wide transform hover:scale-105 transition duration-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-75" href="#home">Rekmand Investment</a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a class="text-white font-semibold px-4 py-2 rounded-lg transition duration-300 hover:bg-red-700 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-opacity-75" href="#services">Services</a>
+                <a class="text-white font-semibold px-4 py-2 rounded-lg transition duration-300 hover:bg-red-700 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-opacity-75" href="#contact">Contact</a>
 
-                    <!-- NJ Dropdown -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle vibrant-link" href="#" id="njDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">NJ Portal</a>
-                        <ul class="dropdown-menu animate__animated animate__fadeInDown" aria-labelledby="njDropdown">
-                            <li><a class="dropdown-item" href="https://ewa.njindiaonline.com/ewa/login" target="_blank">NJ E-Wealth</a></li>
-                            <li><a class="dropdown-item" href="https://www.njindiaonline.in/cdesk/login.fin" target="_blank">NJ Client Desk</a></li>
-                        </ul>
-                    </li>
+                <!-- NJ Dropdown -->
+                <div class="relative group">
+                    <button class="text-white font-semibold px-4 py-2 rounded-lg transition duration-300 hover:bg-red-700 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-opacity-75">NJ Portal</button>
+                    <div class="absolute hidden group-hover:block bg-white shadow-xl rounded-md py-2 z-10 animate__animated animate__fadeInDown origin-top-right transform scale-95 group-hover:scale-100 transition-transform duration-200 ease-out">
+                        <a class="block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-blue-700 transition duration-200" href="https://ewa.njindiaonline.com/ewa/login" target="_blank">NJ E-Wealth</a>
+                        <a class="block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-blue-700 transition duration-200" href="https://www.njindiaonline.in/cdesk/login.fin" target="_blank">NJ Client Desk</a>
+                    </div>
+                </div>
 
-                    <!-- Prudent Link -->
-                    <li class="nav-item"><a class="nav-link vibrant-link" href="https://www.prudentcorporate.com/ccd/index.aspx" target="_blank">Prudent Client Desk</a></li>
+                <!-- Prudent Link -->
+                <a class="text-white font-semibold px-4 py-2 rounded-lg transition duration-300 hover:bg-red-700 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-opacity-75" href="https://www.prudentcorporate.com/ccd/index.aspx" target="_blank">Prudent Client Desk</a>
 
-                    <!-- FundzBazzar Dropdown -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle vibrant-link" href="#" id="fundzDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">FundzBazzar Portal</a>
-                        <ul class="dropdown-menu animate__animated animate__fadeInDown" aria-labelledby="fundzDropdown">
-                            <li><a class="dropdown-item" href="https://www.fundzbazar.com/signin" target="_blank">FundzBazzar Signin</a></li>
-                            <li><a class="dropdown-item" href="https://broking.fundzbazar.com/" target="_blank">FundzBazzar Broking</a></li>
-                        </ul>
-                    </li>
-                    
-                    <!-- Amfiindia Link -->
-                    <li class="nav-item"><a class="nav-link vibrant-link" href="https://www.amfiindia.com/" target="_blank">Amfiindia</a></li>
-                </ul>
+                <!-- FundzBazzar Dropdown -->
+                <div class="relative group">
+                    <button class="text-white font-semibold px-4 py-2 rounded-lg transition duration-300 hover:bg-red-700 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-opacity-75">FundzBazzar Portal</button>
+                    <div class="absolute hidden group-hover:block bg-white shadow-xl rounded-md py-2 z-10 animate__animated animate__fadeInDown origin-top-right transform scale-95 group-hover:scale-100 transition-transform duration-200 ease-out">
+                        <a class="block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-blue-700 transition duration-200" href="https://www.fundzbazar.com/signin" target="_blank">FundzBazzar Signin</a>
+                        <a class="block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-blue-700 transition duration-200" href="https://broking.fundzbazar.com/" target="_blank">FundzBazzar Broking</a>
+                    </div>
+                </div>
+                
+                <!-- Amfiindia Link -->
+                <a class="text-white font-semibold px-4 py-2 rounded-lg transition duration-300 hover:bg-red-700 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-opacity-75" href="https://www.amfiindia.com/" target="_blank">Amfiindia</a>
             </div>
+            <button class="md:hidden text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-75 rounded-md p-2" id="mobile-menu-button" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-red-700 py-2 shadow-inner" id="mobile-menu" role="menu" aria-labelledby="mobile-menu-button">
+            <a class="block text-white px-4 py-2 hover:bg-red-800 transition duration-200 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-opacity-75" href="#services">Services</a>
+            <a class="block text-white px-4 py-2 hover:bg-red-800 transition duration-200 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-opacity-75" href="#contact">Contact</a>
+            <a class="block text-white px-4 py-2 hover:bg-red-800 transition duration-200 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-opacity-75" href="https://ewa.njindiaonline.com/ewa/login" target="_blank">NJ E-Wealth</a>
+            <a class="block text-white px-4 py-2 hover:bg-red-800 transition duration-200 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-opacity-75" href="https://www.njindiaonline.in/cdesk/login.fin" target="_blank">NJ Client Desk</a>
+            <a class="block text-white px-4 py-2 hover:bg-red-800 transition duration-200 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-opacity-75" href="https://www.prudentcorporate.com/ccd/index.aspx" target="_blank">Prudent Client Desk</a>
+            <a class="block text-white px-4 py-2 hover:bg-red-800 transition duration-200 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-opacity-75" href="https://www.fundzbazar.com/signin" target="_blank">FundzBazzar Signin</a>
+            <a class="block text-white px-4 py-2 hover:bg-red-800 transition duration-200 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-opacity-75" href="https://broking.fundzbazar.com/" target="_blank">FundzBazzar Broking</a>
+            <a class="block text-white px-4 py-2 hover:bg-red-800 transition duration-200 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-opacity-75" href="https://www.amfiindia.com/" target="_blank">Amfiindia</a>
         </div>
     </nav>
 
-    <section class="hero py-5 text-center position-relative overflow-hidden" id="home">
-        <div class="container position-relative z-2">
-            <h2 class="display-4 fw-bold mb-3">Welcome to Rekmand</h2>
-            <p class="lead mb-4">Expert mutual fund management with personalized service</p>
-            <div class="d-flex flex-column flex-md-row justify-content-center gap-3 mt-4">
-                <a href="#services" class="btn btn-danger btn-lg px-4 shadow vibrant-link">Explore Mutual Funds</a>
-                <a href="#contact" class="btn btn-warning btn-lg px-4 shadow vibrant-link">Start Investing Today</a>
+    <section class="relative py-16 md:py-24 text-center overflow-hidden bg-gradient-to-br from-blue-50 to-yellow-100 font-sans animate-fade-in" id="home" data-aos="fade-up">
+        <div class="container mx-auto relative z-10 px-4">
+            <h2 class="text-4xl md:text-6xl font-extrabold mb-4 text-blue-800 drop-shadow-lg leading-tight animate-slide-up">Welcome to Rekmand</h2>
+            <p class="text-lg md:text-xl mb-8 text-red-700 leading-relaxed animate-slide-up animation-delay-200">Expert mutual fund management with personalized service</p>
+            <div class="flex flex-col md:flex-row justify-center gap-6 mt-10 animate-slide-up animation-delay-400">
+                <a href="#services" class="bg-red-600 text-white font-semibold py-3 px-10 rounded-full shadow-lg hover:bg-red-700 transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-red-300 focus:ring-opacity-75">Explore Mutual Funds</a>
+                <a href="#contact" class="bg-yellow-500 text-red-800 font-semibold py-3 px-10 rounded-full shadow-lg hover:bg-yellow-600 transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-yellow-300 focus:ring-opacity-75">Start Investing Today</a>
             </div>
         </div>
-        <img src="images/Financial_Planning.png" alt="Financial Planning" class="position-absolute bottom-0 end-0 d-none d-md-block">
+        <img src="images/Financial_Planning.png" alt="Financial Planning" class="absolute bottom-0 right-0 max-w-sm opacity-20 pointer-events-none hidden md:block transform translate-x-1/4 translate-y-1/4" loading="lazy" srcset="images/Financial_Planning_small.png 400w, images/Financial_Planning_medium.png 800w, images/Financial_Planning.png 1200w" sizes="(max-width: 768px) 400px, (max-width: 1200px) 800px, 1200px">
     </section>
 
-    <!-- Market Overview Section -->
-    <section class="market-overview py-4 bg-white border-top border-bottom">
-        <div class="container">
-            <h3 class="mb-4 text-center fw-bold">Market Overview</h3>
-            <div class="row justify-content-center align-items-center g-4">
-                <div class="col-md-4">
-                    <div class="card shadow-sm border-0 text-center">
-                        <div class="card-body">
-                            <h5 class="card-title mb-2">Nifty 50</h5>
-                            <div id="nifty-ticker" class="market-ticker mb-2">Loading...</div>
-                            <div id="nifty-chart" style="height: 80px;"></div>
-                        </div>
-                    </div>
+    <section class="py-12 md:py-20 bg-white border-t border-b border-blue-100 font-sans animate-fade-in animation-delay-600" data-aos="fade-up" id="market-overview">
+        <div class="container mx-auto px-4">
+            <h3 class="mb-8 text-center text-blue-700 font-bold text-3xl md:text-4xl drop-shadow">Market Overview</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="market-overview-content">
+                <div class="bg-gradient-to-br from-blue-50 to-yellow-50 rounded-2xl shadow-lg p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+                    <h5 class="text-xl font-semibold mb-2 text-blue-800">Nifty 50</h5>
+                    <div id="nifty-ticker" class="text-3xl font-bold mb-2 text-gray-800">Loading...</div>
+                    <div id="nifty-chart" style="height: 80px;"></div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card shadow-sm border-0 text-center">
-                        <div class="card-body">
-                            <h5 class="card-title mb-2">Sensex</h5>
-                            <div id="sensex-ticker" class="market-ticker mb-2">Loading...</div>
-                            <div id="sensex-chart" style="height: 80px;"></div>
-                        </div>
-                    </div>
+                <div class="bg-gradient-to-br from-blue-50 to-yellow-50 rounded-2xl shadow-lg p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+                    <h5 class="text-xl font-semibold mb-2 text-blue-800">Sensex</h5>
+                    <div id="sensex-ticker" class="text-3xl font-bold mb-2 text-gray-800">Loading...</div>
+                    <div id="sensex-chart" style="height: 80px;"></div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card shadow-sm border-0 text-center">
-                        <div class="card-body">
-                            <h5 class="card-title mb-2">Global Indices</h5>
-                            <div id="global-ticker" class="market-ticker mb-2">Loading...</div>
-                            <div id="global-chart" style="height: 80px;"></div>
-                        </div>
-                    </div>
+                <div class="bg-gradient-to-br from-blue-50 to-yellow-50 rounded-2xl shadow-lg p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+                    <h5 class="text-xl font-semibold mb-2 text-blue-800">Nifty Midcap 50</h5>
+                    <div id="nifty-midcap-ticker" class="text-3xl font-bold mb-2 text-gray-800">Loading...</div>
+                    <div id="nifty-midcap-chart"></div>
                 </div>
+            </div>
+            <div id="market-overview-skeleton" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-200 rounded-2xl shadow-lg p-6 h-40 animate-pulse"></div>
+                <div class="bg-gray-200 rounded-2xl shadow-lg p-6 h-40 animate-pulse"></div>
+                <div class="bg-gray-200 rounded-2xl shadow-lg p-6 h-40 animate-pulse"></div>
             </div>
         </div>
     </section>
 
-    <!-- Available Mutual Funds Section -->
-    <section class="mutual-funds py-5 bg-light">
-        <div class="container">
-            <h3 class="mb-4 text-center fw-bold">Available Mutual Funds</h3>
-            <div class="row justify-content-center">
-                <div class="col-md-4 mb-4">
-                    <div class="card shadow-sm border-0 h-100">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Axis Bluechip Fund</h5>
-                            <p class="mb-1"><strong>Type:</strong> Equity Large Cap</p>
-                            <p class="mb-1"><strong>3Y Returns:</strong> 15.2%</p>
-                            <p class="mb-1"><strong>Risk:</strong> Moderate</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card shadow-sm border-0 h-100">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">HDFC Mid-Cap Opportunities</h5>
-                            <p class="mb-1"><strong>Type:</strong> Equity Mid Cap</p>
-                            <p class="mb-1"><strong>3Y Returns:</strong> 19.8%</p>
-                            <p class="mb-1"><strong>Risk:</strong> High</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card shadow-sm border-0 h-100">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">ICICI Prudential Balanced Advantage</h5>
-                            <p class="mb-1"><strong>Type:</strong> Hybrid</p>
-                            <p class="mb-1"><strong>3Y Returns:</strong> 11.5%</p>
-                            <p class="mb-1"><strong>Risk:</strong> Low</p>
-                        </div>
-                    </div>
-                </div>
+    
+    <section class="py-12 md:py-16 bg-white animate-fade-in animation-delay-800" id="top-funds" data-aos="fade-up">
+        <div class="container mx-auto px-4">
+            <h3 class="mb-8 text-center text-blue-700 font-bold text-3xl md:text-4xl drop-shadow">Top 3 Mutual Funds</h3>
+            <div id="top-funds-container" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Top funds will be loaded here -->
+            </div>
+            <div id="top-funds-skeleton" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-gray-200 rounded-xl shadow-lg p-6 h-32 animate-pulse"></div>
+                <div class="bg-gray-200 rounded-xl shadow-lg p-6 h-32 animate-pulse"></div>
+                <div class="bg-gray-200 rounded-xl shadow-lg p-6 h-32 animate-pulse"></div>
             </div>
         </div>
     </section>
 
-    <!-- Tools Section -->
-    <section class="tools-section py-5">
-        <div class="container">
-            <h3 class="mb-4 text-center fw-bold">Investment Tools</h3>
-            <div class="row justify-content-center g-4">
-                <div class="col-md-3 col-6">
-                    <div class="card shadow-sm border-0 h-100 text-center tool-card">
-                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
-                            <span class="tool-icon mb-2">📈</span>
-                            <h5 class="card-title">SIP Calculator</h5>
-                            <p class="card-text small">Estimate your returns from monthly SIP investments.</p>
-                            <a href="#" class="btn btn-outline-primary btn-sm mt-auto disabled">Coming Soon</a>
-                        </div>
-                    </div>
+    
+
+    <section class="py-12 md:py-20 bg-gradient-to-br from-blue-50 to-yellow-100 animate-fade-in animation-delay-1000" id="tools" data-aos="fade-up">
+        <div class="container mx-auto px-4">
+            <h3 class="mb-8 text-center text-blue-700 font-bold text-3xl md:text-4xl drop-shadow">Investment Tools</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center h-full flex flex-col items-center justify-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+                    <span class="text-5xl mb-3">📈</span>
+                    <h5 class="text-xl font-semibold mb-2 text-blue-800">SIP Calculator</h5>
+                    <p class="text-sm text-gray-600 mb-4 leading-relaxed">Estimate your returns from monthly SIP investments.</p>
+                    <a href="#" class="bg-blue-600 text-white font-semibold py-2 px-6 rounded-full hover:bg-blue-700 transition duration-300 mt-auto calculator-btn focus:outline-none focus:ring-4 focus:ring-blue-300 focus:ring-opacity-75" data-calculator-type="sip">Calculate</a>
                 </div>
-                <div class="col-md-3 col-6">
-                    <div class="card shadow-sm border-0 h-100 text-center tool-card">
-                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
-                            <span class="tool-icon mb-2">💰</span>
-                            <h5 class="card-title">Lumpsum Calculator</h5>
-                            <p class="card-text small">Calculate future value of a one-time investment.</p>
-                            <a href="#" class="btn btn-outline-primary btn-sm mt-auto disabled">Coming Soon</a>
-                        </div>
-                    </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center h-full flex flex-col items-center justify-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+                    <span class="text-5xl mb-3">💰</span>
+                    <h5 class="text-xl font-semibold mb-2 text-blue-800">Lumpsum Calculator</h5>
+                    <p class="text-sm text-gray-600 mb-4 leading-relaxed">Calculate future value of a one-time investment.</p>
+                    <a href="#" class="bg-blue-600 text-white font-semibold py-2 px-6 rounded-full hover:bg-blue-700 transition duration-300 mt-auto calculator-btn focus:outline-none focus:ring-4 focus:ring-blue-300 focus:ring-opacity-75" data-calculator-type="lumpsum">Calculate</a>
                 </div>
-                <div class="col-md-3 col-6">
-                    <div class="card shadow-sm border-0 h-100 text-center tool-card">
-                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
-                            <span class="tool-icon mb-2">🛡️</span>
-                            <h5 class="card-title">Risk Profiler</h5>
-                            <p class="card-text small">Assess your risk profile for better investment decisions.</p>
-                            <a href="#" class="btn btn-outline-primary btn-sm mt-auto disabled">Coming Soon</a>
-                        </div>
-                    </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center h-full flex flex-col items-center justify-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+                    <span class="text-5xl mb-3">🛡️</span>
+                    <h5 class="text-xl font-semibold mb-2 text-blue-800">Risk Profiler</h5>
+                    <p class="text-sm text-gray-600 mb-4 leading-relaxed">Assess your risk profile for better investment decisions.</p>
+                    <a href="#" class="bg-blue-600 text-white font-semibold py-2 px-6 rounded-full hover:bg-blue-700 transition duration-300 mt-auto calculator-btn focus:outline-none focus:ring-4 focus:ring-blue-300 focus:ring-opacity-75" data-calculator-type="risk-profiler">Calculate</a>
                 </div>
-                <div class="col-md-3 col-6">
-                    <div class="card shadow-sm border-0 h-100 text-center tool-card">
-                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
-                            <span class="tool-icon mb-2">🎯</span>
-                            <h5 class="card-title">Goal Planning</h5>
-                            <p class="card-text small">Plan and track your financial goals with ease.</p>
-                            <a href="#" class="btn btn-outline-primary btn-sm mt-auto disabled">Coming Soon</a>
-                        </div>
-                    </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center h-full flex flex-col items-center justify-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+                    <span class="text-5xl mb-3">🎯</span>
+                    <h5 class="text-xl font-semibold mb-2 text-blue-800">Goal Planning</h5>
+                    <p class="text-sm text-gray-600 mb-4 leading-relaxed">Plan and track your financial goals with ease.</p>
+                    <a href="#" class="bg-blue-600 text-white font-semibold py-2 px-6 rounded-full hover:bg-blue-700 transition duration-300 mt-auto calculator-btn focus:outline-none focus:ring-4 focus:ring-blue-300 focus:ring-opacity-75" data-bs-toggle="modal" data-bs-target="#calculatorModal" data-calculator-type="goal-planning">Calculate</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="services-section py-5" id="services">
-        <div class="container">
-            <h2 class="text-center mb-4 fw-bold">Our Services</h2>
-            <div class="row justify-content-center g-4">
-                <div class="col-md-3 col-6">
-                    <div class="card shadow-sm border-0 h-100 text-center service-card">
-                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
-                            <span class="service-icon mb-3">💼</span>
-                            <h5 class="card-title">Portfolio Management</h5>
-                            <p class="card-text small">Customized portfolio strategies to help you achieve your financial goals with confidence.</p>
-                        </div>
-                    </div>
+    <section class="py-12 md:py-16 bg-white animate-fade-in animation-delay-1200" id="services" data-aos="fade-up">
+        <div class="container mx-auto px-4">
+            <h2 class="text-center mb-8 text-blue-700 font-bold text-3xl md:text-4xl drop-shadow">Our Services</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center h-full flex flex-col items-center justify-center transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                    <span class="text-5xl mb-3">💼</span>
+                    <h5 class="text-xl font-semibold mb-2 text-blue-800">Portfolio Management</h5>
+                    <p class="text-sm text-gray-600 leading-relaxed">Customized portfolio strategies to help you achieve your financial goals with confidence.</p>
                 </div>
-                <div class="col-md-3 col-6">
-                    <div class="card shadow-sm border-0 h-100 text-center service-card">
-                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
-                            <span class="service-icon mb-3">📊</span>
-                            <h5 class="card-title">Mutual Fund Investment</h5>
-                            <p class="card-text small">Expert guidance for investing in top-performing mutual funds tailored to your needs.</p>
-                        </div>
-                    </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center h-full flex flex-col items-center justify-center transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                    <span class="text-5xl mb-3">📊</span>
+                    <h5 class="text-xl font-semibold mb-2 text-blue-800">Mutual Fund Investment</h5>
+                    <p class="text-sm text-gray-600 leading-relaxed">Expert guidance for investing in top-performing mutual funds tailored to your needs.</p>
                 </div>
-                <div class="col-md-3 col-6">
-                    <div class="card shadow-sm border-0 h-100 text-center service-card">
-                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
-                            <span class="service-icon mb-3">📝</span>
-                            <h5 class="card-title">Financial Planning</h5>
-                            <p class="card-text small">Comprehensive financial planning for a secure and prosperous future.</p>
-                        </div>
-                    </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center h-full flex flex-col items-center justify-center transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                    <span class="text-5xl mb-3">📝</span>
+                    <h5 class="text-xl font-semibold mb-2 text-blue-800">Financial Planning</h5>
+                    <p class="text-sm text-gray-600 leading-relaxed">Comprehensive financial planning for a secure and prosperous future.</p>
                 </div>
-                <div class="col-md-3 col-6">
-                    <div class="card shadow-sm border-0 h-100 text-center service-card">
-                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
-                            <span class="service-icon mb-3">🤝</span>
-                            <h5 class="card-title">Personalized Advisory</h5>
-                            <p class="card-text small">One-on-one advisory to help you make informed investment decisions at every step.</p>
-                        </div>
-                    </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center h-full flex flex-col items-center justify-center transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                    <span class="text-5xl mb-3">🤝</span>
+                    <h5 class="text-xl font-semibold mb-2 text-blue-800">Personalized Advisory</h5>
+                    <p class="text-sm text-gray-600 leading-relaxed">One-on-one advisory to help you make informed investment decisions at every step.</p>
                 </div>
             </div>
         </div>
     </section>
     
-
-    <!-- About Us Section -->
-    <section class="about-us-section py-5 bg-light" id="about">
-        <div class="container">
-            <div class="row align-items-center g-4">
-                <div class="col-md-6 text-center text-md-start">
-                    <img src="images/Financial_Planning.png" alt="About Rekmand" class="img-fluid rounded shadow about-img mb-4 mb-md-0" style="max-width: 350px;">
+    <section class="py-12 md:py-20 bg-gradient-to-br from-blue-50 to-yellow-100 animate-fade-in animation-delay-1400" id="testimonials" data-aos="fade-up">
+        <div class="container mx-auto px-4">
+            <h2 class="text-center mb-8 text-blue-700 font-bold text-3xl md:text-4xl drop-shadow">What Our Clients Say</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+                    <p class="text-lg text-gray-700 mb-4 italic">"Rekmand has transformed my financial planning. Their personalized approach and expert advice are truly invaluable!"</p>
+                    <p class="font-semibold text-blue-800">- Jane Doe</p>
+                    <p class="text-sm text-gray-500">Long-term Investor</p>
                 </div>
-                <div class="col-md-6">
-                    <h2 class="fw-bold mb-3 text-primary">About Us</h2>
-                    <p class="lead mb-3">Rekmand Mutual Fund Services is dedicated to empowering individuals and families to achieve financial freedom through expert, transparent, and personalized investment management.</p>
-                    <ul class="list-unstyled mb-3">
-                        <li class="mb-2"><span class="about-icon">🌟</span> <strong>Client-Centric Approach:</strong> Your goals and needs are at the heart of our strategies.</li>
-                        <li class="mb-2"><span class="about-icon">📈</span> <strong>Proven Expertise:</strong> Years of experience in mutual funds, portfolio management, and financial planning.</li>
-                        <li class="mb-2"><span class="about-icon">🤝</span> <strong>Trusted Partnership:</strong> We work alongside you as reliable advisors for every financial milestone.</li>
-                        <li class="mb-2"><span class="about-icon">🔒</span> <strong>Transparency & Integrity:</strong> Clear communication and ethical practices in all we do.</li>
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+                    <p class="text-lg text-gray-700 mb-4 italic">"I've seen significant growth in my portfolio since joining Rekmand. Highly recommend their mutual fund services."</p>
+                    <p class="font-semibold text-blue-800">- John Smith</p>
+                    <p class="text-sm text-gray-500">Satisfied Client</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+                    <p class="text-lg text-gray-700 mb-4 italic">"Their team made understanding investments so easy. I feel much more confident about my financial future now."</p>
+                    <p class="font-semibold text-blue-800">- Emily White</p>
+                    <p class="text-sm text-gray-500">New Investor</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 md:py-20 bg-gradient-to-br from-blue-50 to-yellow-100 animate-fade-in animation-delay-1400" id="about" data-aos="fade-up">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center -mx-4">
+                <div class="w-full md:w-1/2 px-4 mb-8 md:mb-0 text-center md:text-left animate-slide-up">
+                    <img src="images/Financial_Planning.png" alt="About Rekmand" class="mx-auto md:mx-0 rounded-lg shadow-xl max-w-sm transform transition-transform duration-300 hover:scale-105">
+                </div>
+                <div class="w-full md:w-1/2 px-4 animate-slide-up animation-delay-200">
+                    <h2 class="font-bold text-3xl md:text-4xl mb-4 text-blue-800 drop-shadow-lg">About Us</h2>
+                    <p class="text-lg mb-6 text-gray-700 leading-relaxed">Rekmand Mutual Fund Services is dedicated to empowering individuals and families to achieve financial freedom through expert, transparent, and personalized investment management. We combine deep market insights with a client-first approach, ensuring your financial journey is both secure and prosperous. Our unique blend of cutting-edge tools and human expertise sets us apart, providing you with a truly bespoke investment experience.</p>
+                    <ul class="list-none mb-6 text-gray-700 space-y-3">
+                        <li class="flex items-start transition-transform duration-300 hover:scale-105"><span class="text-2xl mr-3 text-yellow-500">🌟</span> <strong class="font-semibold text-blue-800">Client-Centric Approach:</strong> Your goals and needs are at the heart of our strategies.</li>
+                        <li class="flex items-start transition-transform duration-300 hover:scale-105"><span class="text-2xl mr-3 text-green-500">📈</span> <strong class="font-semibold text-blue-800">Proven Expertise:</strong> Years of experience in mutual funds, portfolio management, and financial planning.</li>
+                        <li class="flex items-start transition-transform duration-300 hover:scale-105"><span class="text-2xl mr-3 text-purple-500">🤝</span> <strong class="font-semibold text-blue-800">Trusted Partnership:</strong> We work alongside you as reliable advisors for every financial milestone.</li>
+                        <li class="flex items-start transition-transform duration-300 hover:scale-105"><span class="text-2xl mr-3 text-red-500">🔒</span> <strong class="font-semibold text-blue-800">Transparency & Integrity:</strong> Clear communication and ethical practices in all we do.</li>
                     </ul>
-                    <p class="mb-0">Let us help you grow, protect, and enjoy your wealth with confidence and peace of mind.</p>
+                    <p class="text-gray-700 leading-relaxed">Let us help you grow, protect, and enjoy your wealth with confidence and peace of mind.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="contact-section py-5 bg-light" id="contact">
-        <div class="container">
-            <h2 class="text-center mb-4 fw-bold">Get in Touch</h2>
-            <div class="row g-4 align-items-center">
-                <div class="col-md-5">
-                    <div class="contact-details p-4 bg-white rounded shadow-sm mb-4 mb-md-0">
-                        <h5 class="mb-3">Contact Information</h5>
-                        <p class="mb-2"><span class="contact-icon">📧</span> <a href="mailto:mandal.rekha@gmail.com" class="text-dark">mandal.rekha@gmail.com</a></p>
-                        <p class="mb-2"><span class="contact-icon">📱</span> <a href="tel:+918826155883" class="text-dark">+91 8826155883</a></p>
-                        <p class="mb-2 text-muted"><span class="contact-icon">📍</span> <em>Physical address coming soon</em></p>
-                    </div>
-                    <div class="map-responsive mt-4 text-center">
-                        <div class="alert alert-info mb-0" role="alert" style="border-radius:12px;">Map integration coming soon</div>
-                    </div>
+    <section class="py-12 md:py-20 bg-gradient-to-br from-blue-50 to-yellow-100 animate-fade-in animation-delay-1600" id="faq" data-aos="fade-up">
+        <div class="container mx-auto px-4">
+            <h2 class="text-center mb-8 text-blue-700 font-bold text-3xl md:text-4xl drop-shadow">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <div class="bg-white rounded-xl shadow-lg p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+                    <h5 class="text-xl font-semibold mb-2 text-blue-800">What is a Mutual Fund?</h5>
+                    <p class="text-gray-700 leading-relaxed">A mutual fund is a professionally managed investment fund that pools money from many investors to purchase securities. This allows investors to diversify their portfolio and gain access to professional management at a lower cost than they could on their own.</p>
                 </div>
-                <div class="col-md-7">
-                    <div class="card shadow-sm border-0 p-4 h-100">
-                        <h5 class="mb-3">Contact Form</h5>
-                        <form>
-                            <div class="mb-3 text-start">
-                                <label for="name" class="form-label">Name</label>
-                                <input type="text" class="form-control" id="name" placeholder="Your Name" required>
-                            </div>
-                            <div class="mb-3 text-start">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="email" placeholder="you@email.com" required>
-                            </div>
-                            <div class="mb-3 text-start">
-                                <label for="message" class="form-label">Message</label>
-                                <textarea class="form-control" id="message" rows="4" placeholder="How can we help you?" required></textarea>
-                            </div>
-                            <div class="text-end">
-                                <button type="submit" class="btn btn-primary px-4" disabled>Send Message</button>
-                                <small class="d-block mt-2 text-muted">(Demo only)</small>
-                            </div>
-                        </form>
-                    </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+                    <h5 class="text-xl font-semibold mb-2 text-blue-800">How do I start investing with Rekmand?</h5>
+                    <p class="text-gray-700 leading-relaxed">Starting your investment journey with Rekmand is simple. You can explore our services, use our investment tools, and then contact us directly through the form on this page or by phone/email to schedule a consultation. We'll guide you through every step.</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+                    <h5 class="text-xl font-semibold mb-2 text-blue-800">What are the risks involved in mutual fund investments?</h5>
+                    <p class="text-gray-700 leading-relaxed">All mutual fund investments are subject to market risks. The value of investments may go down or up depending on the factors and forces affecting the securities market. It's important to read all scheme related documents carefully. Our risk profiler tool can help you understand your risk tolerance.</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+                    <h5 class="text-xl font-semibold mb-2 text-blue-800">Do you offer personalized financial planning?</h5>
+                    <p class="text-gray-700 leading-relaxed">Yes, we offer comprehensive and personalized financial planning services. Our advisors work closely with you to understand your financial goals, risk tolerance, and current situation to create a tailored plan that helps you achieve your objectives.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-danger text-white text-center py-3">
-        <p>© 2024 Rekmand Mutual Fund Services. All rights reserved.</p>
+    <section class="py-12 md:py-20 bg-gradient-to-br from-blue-50 to-yellow-100 animate-fade-in animation-delay-1600" id="faq" data-aos="fade-up">
+        <div class="container mx-auto px-4">
+            <h2 class="text-center mb-8 text-blue-700 font-bold text-3xl md:text-4xl drop-shadow">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <div class="bg-white rounded-xl shadow-lg p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+                    <h5 class="text-xl font-semibold mb-2 text-blue-800">What is a Mutual Fund?</h5>
+                    <p class="text-gray-700 leading-relaxed">A mutual fund is a professionally managed investment fund that pools money from many investors to purchase securities. This allows investors to diversify their portfolio and gain access to professional management at a lower cost than they could on their own.</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+                    <h5 class="text-xl font-semibold mb-2 text-blue-800">How do I start investing with Rekmand?</h5>
+                    <p class="text-gray-700 leading-relaxed">Starting your investment journey with Rekmand is simple. You can explore our services, use our investment tools, and then contact us directly through the form on this page or by phone/email to schedule a consultation. We'll guide you through every step.</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+                    <h5 class="text-xl font-semibold mb-2 text-blue-800">What are the risks involved in mutual fund investments?</h5>
+                    <p class="text-gray-700 leading-relaxed">All mutual fund investments are subject to market risks. The value of investments may go down or up depending on the factors and forces affecting the securities market. It's important to read all scheme related documents carefully. Our risk profiler tool can help you understand your risk tolerance.</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+                    <h5 class="text-xl font-semibold mb-2 text-blue-800">Do you offer personalized financial planning?</h5>
+                    <p class="text-gray-700 leading-relaxed">Yes, we offer comprehensive and personalized financial planning services. Our advisors work closely with you to understand your financial goals, risk tolerance, and current situation to create a tailored plan that helps you achieve your objectives.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 md:py-20 bg-gradient-to-br from-blue-50 to-yellow-100 animate-fade-in animation-delay-1600" id="contact" data-aos="fade-up">
+        <div class="container mx-auto px-4">
+            <h2 class="text-center mb-8 text-blue-700 font-bold text-3xl md:text-4xl drop-shadow">Get in Touch</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                <div class="bg-white rounded-xl shadow-lg p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl animate-slide-up">
+                    <h5 class="text-2xl font-bold mb-4 text-blue-800">Contact Information</h5>
+                    <p class="mb-4 text-gray-700 flex items-center transition-transform duration-300 hover:scale-105"><span class="text-2xl mr-3 text-blue-500">📧</span> <a href="mailto:mandal.rekha@gmail.com" class="text-blue-700 hover:underline font-medium">mandal.rekha@gmail.com</a></p>
+                    <p class="mb-4 text-gray-700 flex items-center transition-transform duration-300 hover:scale-105"><span class="text-2xl mr-3 text-green-500">📱</span> <a href="tel:+918826155883" class="text-blue-700 hover:underline font-medium">+91 8826155883</a></p>
+                    <p class="mb-0 text-gray-500 flex items-center transition-transform duration-300 hover:scale-105"><span class="text-2xl mr-3 text-red-500">📍</span> <em>Physical address coming soon</em></p>
+                    <div class="mt-6 text-center">
+                        <div class="bg-blue-100 text-blue-800 px-4 py-3 rounded-lg shadow-inner" role="alert">Map integration coming soon</div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 h-full transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl animate-slide-up animation-delay-200">
+                    <h5 class="text-2xl font-bold mb-4 text-blue-800">Contact Form</h5>
+                    <form>
+                        <div class="mb-4 text-left">
+                            <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
+                            <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500 transition duration-200" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-4 text-left">
+                            <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+                            <input type="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500 transition duration-200" id="email" placeholder="you@email.com" required>
+                        </div>
+                        <div class="mb-4 text-left">
+                            <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Message</label>
+                            <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500 transition duration-200 h-32" id="message" placeholder="How can we help you?" required></textarea>
+                        </div>
+                        <div class="text-right">
+                            <button type="submit" class="bg-blue-600 text-white font-bold py-2 px-6 rounded-full hover:bg-blue-700 transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-300 focus:ring-opacity-75" id="contact-submit-btn">
+                                <span id="button-text">Send Message</span>
+                                <span id="loading-spinner" class="hidden ml-2 animate-spin rounded-full h-4 w-4 border-b-2 border-white"></span>
+                            </button>
+                            <small class="block mt-2 text-gray-500">(Demo only)</small>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-red-700 text-white text-center py-6 shadow-inner">
+        <div class="container mx-auto px-4">
+            <p class="text-sm md:text-base">&copy; 2024 Rekmand Mutual Fund Services. All rights reserved.</p>
+        </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="js/marketSummary.js"></script>
+    <script src="js/topFunds.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/calculators.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </body>
 </html>
+
+<!-- Back to Top Button -->
+<button id="back-to-top" class="fixed bottom-5 right-5 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300 ease-in-out opacity-0 transform translate-y-4 pointer-events-none z-50">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+</button>
+
+<!-- Calculator Modal -->
+<div id="calculatorModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 hidden flex items-center justify-center z-50" role="dialog" aria-modal="true">
+    <div class="bg-white rounded-lg shadow-xl w-11/12 md:w-1/2 lg:w-1/3">
+        <div class="flex justify-between items-center p-4 border-b">
+            <h5 class="text-xl font-semibold" id="calculatorModalLabel">Calculator</h5>
+            <button type="button" class="text-gray-400 hover:text-gray-600 focus:outline-none" id="closeModalBtn">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>
+        <div class="p-4" id="calculatorModalBody">
+            <!-- Calculator content will be loaded here by JavaScript -->
+        </div>
+    </div>
+</div>
