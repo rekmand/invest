@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://127.0.0.1:8000/api';
+
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchMarketSummary();
@@ -92,63 +92,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Handle contact form submission with loading indicator
-    const contactForm = document.querySelector('#contact form');
+    // Handle contact form submission
     const contactSubmitBtn = document.getElementById('contact-submit-btn');
-    const buttonText = document.getElementById('button-text');
-    const loadingSpinner = document.getElementById('loading-spinner');
 
-    if (contactForm && contactSubmitBtn && buttonText && loadingSpinner) {
-        contactForm.addEventListener('submit', (event) => {
-            event.preventDefault(); // Prevent default form submission
+    if (contactSubmitBtn) {
+        contactSubmitBtn.addEventListener('click', () => {
+            const name = document.getElementById('name').value.trim();
+            const contactNumber = document.getElementById('contact-number').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
 
-            // Get form inputs
-            const nameInput = contactForm.querySelector('#name');
-            const emailInput = contactForm.querySelector('#email');
-            const messageInput = contactForm.querySelector('#message');
-
-            // Basic validation
-            if (!nameInput.value.trim()) {
-                alert('Please enter your name.');
-                nameInput.focus();
+            if (!name || !contactNumber || !subject || !message) {
+                alert('Please fill out all fields before sending.');
                 return;
             }
 
-            if (!emailInput.value.trim()) {
-                alert('Please enter your email address.');
-                emailInput.focus();
-                return;
-            }
+            const mailtoLink = `mailto:mandal.rekha@gmail.com?subject=${encodeURIComponent(`${subject}   (CLIENT QUERY)`)}&body=${encodeURIComponent(`Message:\n${message}\n\nFrom: ${name}\nContact Number: ${contactNumber}`)}`;
 
-            // Simple email regex validation
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(emailInput.value.trim())) {
-                alert('Please enter a valid email address.');
-                emailInput.focus();
-                return;
-            }
-
-            if (!messageInput.value.trim()) {
-                alert('Please enter your message.');
-                messageInput.focus();
-                return;
-            }
-
-            // Show loading indicator
-            contactSubmitBtn.disabled = true;
-            buttonText.classList.add('hidden');
-            loadingSpinner.classList.remove('hidden');
-
-            // Simulate form submission (e.g., API call)
-            setTimeout(() => {
-                // Hide loading indicator
-                contactSubmitBtn.disabled = false;
-                buttonText.classList.remove('hidden');
-                loadingSpinner.classList.add('hidden');
-
-                alert('Thank you for your message! (Demo only)');
-                contactForm.reset(); // Clear the form
-            }, 2000); // Simulate a 2-second delay
+            window.open(mailtoLink, '_blank');
         });
     }
+
 });

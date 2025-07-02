@@ -228,16 +228,26 @@ function calculateLumpsum(event) {
 
 function calculateRiskProfile(event) {
     event.preventDefault();
-    let score = 0;
     const form = event.target;
+    const resultDiv = document.getElementById('riskProfilerResult');
+    let score = 0;
 
-    // Get scores from each question
-    const q1 = parseInt(form.elements['q1'].value);
-    const q2 = parseInt(form.elements['q2'].value);
-    const q3 = parseInt(form.elements['q3'].value);
-    const q4 = parseInt(form.elements['q4'].value);
+    const q1 = form.querySelector('input[name="q1"]:checked');
+    const q2 = form.querySelector('input[name="q2"]:checked');
+    const q3 = form.querySelector('input[name="q3"]:checked');
+    const q4 = form.querySelector('input[name="q4"]:checked');
 
-    score = q1 + q2 + q3 + q4;
+    if (!q1 || !q2 || !q3 || !q4) {
+        resultDiv.innerHTML = `
+            <div class="bg-red-100 text-red-800 p-4 rounded-lg mt-3" role="alert">
+                <p>Please answer all questions to determine your risk profile.</p>
+            </div>
+        `;
+        resultDiv.classList.remove('hidden');
+        return;
+    }
+
+    score = parseInt(q1.value) + parseInt(q2.value) + parseInt(q3.value) + parseInt(q4.value);
 
     let riskProfile = '';
     let riskDescription = '';
@@ -251,17 +261,15 @@ function calculateRiskProfile(event) {
     } else if (score >= 15 && score <= 20) {
         riskProfile = 'Aggressive';
         riskDescription = 'You are comfortable with higher risks for potentially higher returns, focusing on long-term growth.';
-    } else {
-        riskProfile = 'Undetermined';
-        riskDescription = 'Please answer all questions to determine your risk profile.';
     }
 
-    document.getElementById('riskProfilerResult').innerHTML = `
-        <div class="alert alert-info mt-3" role="alert">
-            <h6>Your Risk Profile: <strong>${riskProfile}</strong></h6>
+    resultDiv.innerHTML = `
+        <div class="bg-blue-100 text-blue-800 p-4 rounded-lg mt-3" role="alert">
+            <h6 class="font-bold">Your Risk Profile: <strong>${riskProfile}</strong></h6>
             <p>${riskDescription}</p>
         </div>
     `;
+    resultDiv.classList.remove('hidden');
 }
 
 function calculateGoalPlanning(event) {
@@ -270,9 +278,15 @@ function calculateGoalPlanning(event) {
     const goalAmount = parseFloat(document.getElementById('goalAmount').value);
     const goalTimePeriod = parseFloat(document.getElementById('goalTimePeriod').value);
     const goalExpectedReturn = parseFloat(document.getElementById('goalExpectedReturn').value);
+    const resultDiv = document.getElementById('goalPlanningResult');
 
     if (isNaN(goalAmount) || isNaN(goalTimePeriod) || isNaN(goalExpectedReturn) || goalAmount <= 0 || goalTimePeriod <= 0 || goalExpectedReturn <= 0) {
-        alert('Please enter valid positive numbers for all fields.');
+        resultDiv.innerHTML = `
+            <div class="bg-red-100 text-red-800 p-4 rounded-lg mt-3" role="alert">
+                <p>Please enter valid positive numbers for all fields.</p>
+            </div>
+        `;
+        resultDiv.classList.remove('hidden');
         return;
     }
 
@@ -283,10 +297,11 @@ function calculateGoalPlanning(event) {
     // PMT = FV * r / ((1 + r)^n - 1) / (1 + r)
     let requiredMonthlyInvestment = (goalAmount * monthlyRate) / (Math.pow(1 + monthlyRate, numberOfMonths) - 1) / (1 + monthlyRate);
 
-    document.getElementById('goalPlanningResult').innerHTML = `
-        <div class="alert alert-success mt-3" role="alert">
-            <h6>Goal: <strong>${goalName || 'Your Goal'}</strong></h6>
+    resultDiv.innerHTML = `
+        <div class="bg-blue-100 text-blue-800 p-4 rounded-lg mt-3" role="alert">
+            <h6 class="font-bold">Goal: <strong>${goalName || 'Your Goal'}</strong></h6>
             <p>To reach ₹${goalAmount.toLocaleString('en-IN', { maximumFractionDigits: 2 })} in ${goalTimePeriod} years, you need to invest approximately <strong>₹${requiredMonthlyInvestment.toLocaleString('en-IN', { maximumFractionDigits: 2 })}</strong> per month.</p>
         </div>
     `;
+    resultDiv.classList.remove('hidden');
 }
