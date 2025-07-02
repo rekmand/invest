@@ -1,5 +1,4 @@
-// js/marketSummary.js
-const API_BASE_URL = 'http://localhost:3000'; // Define your API base URL here
+
 
 function fetchMarketSummary() {
     const contentDiv = document.getElementById('market-overview-content');

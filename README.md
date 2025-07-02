@@ -6,7 +6,7 @@ Rekmand Investment is a web application designed to provide professional mutual 
 
 *   **Market Overview**: Displays real-time data for Nifty 50, Sensex, and Nifty Midcap 50, including sparkline graph animations.
 *   **Top Mutual Funds**: Showcases the top 3 equity mutual funds with enhanced card designs, hover effects, and clear display of returns (green for positive, red for negative).
-*   **Investment Tools**: Includes functional SIP Calculator (with frequency option), Lumpsum Calculator, Risk Profiler, and Goal Planning tools, all accessible via pop-up modals.
+*   **Investment Tools**: Includes functional SIP Calculator (with frequency option), Lumpsum Calculator, Risk Profiler, and Goal Planning tools, all accessible via pop-up modals with enhanced UI.
 *   **Testimonials**: A dedicated section showcasing client feedback to build trust.
 *   **FAQ**: A section addressing frequently asked questions.
 *   **Services**: Details on Portfolio Management, Mutual Fund Investment, Financial Planning, and Personalized Advisory.
@@ -16,7 +16,7 @@ Rekmand Investment is a web application designed to provide professional mutual 
 
 *   **Improved User Experience**: Implemented client-side form validation for the contact form, added a loading indicator for form submission, and integrated AOS (Animate On Scroll) library for subtle scroll animations.
 *   **Accessibility**: Enhanced accessibility for the calculator modal and mobile menu button with appropriate ARIA attributes.
-*   **Performance**: Optimized image loading with `srcset` and `sizes` attributes for responsive images, and removed unused CSS and JavaScript files. The `logo_medium.png` reference was removed as the file was not present.
+*   **Performance**: Optimized image loading with `srcset` and `sizes` attributes for responsive images, and removed unused CSS and JavaScript files. The `logo_medium.png` and `Financial_Planning_medium.png` references were removed as these files were not present.
 *   **Code Maintainability**: Defined API base URL in `marketSummary.js` for easier management.
 
 ## Getting Started

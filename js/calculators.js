@@ -15,28 +15,29 @@ document.addEventListener('DOMContentLoaded', () => {
                 case 'sip':
                     modalTitle.textContent = 'SIP Calculator';
                     modalBody.innerHTML = `
-                        <form id="sipCalculatorForm">
-                            <div class="mb-4">
-                                <label for="sipMonthlyInvestment" class="block text-gray-700 text-sm font-bold mb-2">Monthly Investment (₹)</label>
-                                <input type="number" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="sipMonthlyInvestment" value="5000" min="1" required>
+                        <form id="sipCalculatorForm" class="space-y-4 p-4 bg-gray-50 rounded-lg shadow-inner">
+                            <div>
+                                <label for="sipMonthlyInvestment" class="block text-gray-700 text-sm font-semibold mb-2">Monthly Investment (₹)</label>
+                                <input type="number" class="form-input mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 p-2" id="sipMonthlyInvestment" value="5000" min="1" required>
                             </div>
-                            <div class="mb-4">
-                                <label for="sipExpectedReturn" class="block text-gray-700 text-sm font-bold mb-2">Expected Annual Return (%)</label>
-                                <input type="number" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="sipExpectedReturn" value="12" min="0.01" step="0.01" required>
+                            <div>
+                                <label for="sipExpectedReturn" class="block text-gray-700 text-sm font-semibold mb-2">Expected Annual Return (%)</label>
+                                <input type="number" class="form-input mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 p-2" id="sipExpectedReturn" value="12" min="0.01" step="0.01" required>
                             </div>
-                            <div class="mb-4">
-                                <label for="sipTimePeriod" class="block text-gray-700 text-sm font-bold mb-2">Time Period (Years)</label>
-                                <input type="number" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="sipTimePeriod" value="10" min="1" required>
+                            <div>
+                                <label for="sipTimePeriod" class="block text-gray-700 text-sm font-semibold mb-2">Time Period (Years)</label>
+                                <input type="number" class="form-input mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 p-2" id="sipTimePeriod" value="10" min="1" required>
                             </div>
-                            <div class="mb-4">
-                                <label for="sipFrequency" class="block text-gray-700 text-sm font-bold mb-2">SIP Frequency per Year</label>
-                                <input type="number" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="sipFrequency" value="12" min="1" required>
+                            <div>
+                                <label for="sipFrequency" class="block text-gray-700 text-sm font-semibold mb-2">SIP Frequency per Year</label>
+                                <input type="number" class="form-input mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 p-2" id="sipFrequency" value="12" min="1" required>
                             </div>
-                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Calculate</button>
-                            <div class="mt-4">
-                                <h6 class="text-lg font-semibold">Invested Amount: <span id="sipInvestedAmount" class="font-normal"></span></h6>
-                                <h6 class="text-lg font-semibold">Estimated Returns: <span id="sipEstimatedReturns" class="font-normal"></span></h6>
-                                <h6 class="text-lg font-semibold">Total Value: <span id="sipTotalValue" class="font-normal"></span></h6>
+                            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75">Calculate SIP</button>
+                            <div class="mt-6 p-4 bg-blue-100 rounded-lg shadow-md text-blue-800">
+                                <h6 class="text-lg font-bold mb-2">Results:</h6>
+                                <p class="text-base"><span class="font-semibold">Invested Amount:</span> <span id="sipInvestedAmount" class="font-normal"></span></p>
+                                <p class="text-base"><span class="font-semibold">Estimated Returns:</span> <span id="sipEstimatedReturns" class="font-normal"></span></p>
+                                <p class="text-base"><span class="font-semibold">Total Value:</span> <span id="sipTotalValue" class="font-normal"></span></p>
                             </div>
                         </form>
                     `;
@@ -45,24 +46,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 case 'lumpsum':
                     modalTitle.textContent = 'Lumpsum Calculator';
                     modalBody.innerHTML = `
-                        <form id="lumpsumCalculatorForm">
-                            <div class="mb-4">
-                                <label for="lumpsumInvestment" class="block text-gray-700 text-sm font-bold mb-2">Lumpsum Investment (₹)</label>
-                                <input type="number" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="lumpsumInvestment" value="100000" min="1" required>
+                        <form id="lumpsumCalculatorForm" class="space-y-4 p-4 bg-gray-50 rounded-lg shadow-inner">
+                            <div>
+                                <label for="lumpsumInvestment" class="block text-gray-700 text-sm font-semibold mb-2">Lumpsum Investment (₹)</label>
+                                <input type="number" class="form-input mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 p-2" id="lumpsumInvestment" value="100000" min="1" required>
                             </div>
-                            <div class="mb-4">
-                                <label for="lumpsumExpectedReturn" class="block text-gray-700 text-sm font-bold mb-2">Expected Annual Return (%)</label>
-                                <input type="number" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="lumpsumExpectedReturn" value="12" min="0.01" step="0.01" required>
+                            <div>
+                                <label for="lumpsumExpectedReturn" class="block text-gray-700 text-sm font-semibold mb-2">Expected Annual Return (%)</label>
+                                <input type="number" class="form-input mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 p-2" id="lumpsumExpectedReturn" value="12" min="0.01" step="0.01" required>
                             </div>
-                            <div class="mb-4">
-                                <label for="lumpsumTimePeriod" class="block text-gray-700 text-sm font-bold mb-2">Time Period (Years)</label>
-                                <input type="number" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="lumpsumTimePeriod" value="10" min="1" required>
+                            <div>
+                                <label for="lumpsumTimePeriod" class="block text-gray-700 text-sm font-semibold mb-2">Time Period (Years)</label>
+                                <input type="number" class="form-input mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 p-2" id="lumpsumTimePeriod" value="10" min="1" required>
                             </div>
-                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Calculate</button>
-                            <div class="mt-4">
-                                <h6 class="text-lg font-semibold">Invested Amount: <span id="lumpsumInvestedAmount" class="font-normal"></span></h6>
-                                <h6 class="text-lg font-semibold">Estimated Returns: <span id="lumpsumEstimatedReturns" class="font-normal"></span></h6>
-                                <h6 class="text-lg font-semibold">Total Value: <span id="lumpsumTotalValue" class="font-normal"></span></h6>
+                            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75">Calculate Lumpsum</button>
+                            <div class="mt-6 p-4 bg-blue-100 rounded-lg shadow-md text-blue-800">
+                                <h6 class="text-lg font-bold mb-2">Results:</h6>
+                                <p class="text-base"><span class="font-semibold">Invested Amount:</span> <span id="lumpsumInvestedAmount" class="font-normal"></span></p>
+                                <p class="text-base"><span class="font-semibold">Estimated Returns:</span> <span id="lumpsumEstimatedReturns" class="font-normal"></span></p>
+                                <p class="text-base"><span class="font-semibold">Total Value:</span> <span id="lumpsumTotalValue" class="font-normal"></span></p>
                             </div>
                         </form>
                     `;
@@ -71,69 +73,69 @@ document.addEventListener('DOMContentLoaded', () => {
                 case 'risk-profiler':
                     modalTitle.textContent = 'Risk Profiler';
                     modalBody.innerHTML = `
-                        <form id="riskProfilerForm">
-                            <div class="mb-4">
-                                <label class="block text-gray-700 text-sm font-bold mb-2">1. What is your primary investment goal?</label>
-                                <div class="mb-2">
-                                    <input class="mr-2 leading-tight" type="radio" name="q1" id="q1a" value="1" required>
-                                    <label class="text-gray-700" for="q1a">Capital preservation and steady income</label>
+                        <form id="riskProfilerForm" class="space-y-4 p-4 bg-gray-50 rounded-lg shadow-inner">
+                            <div class="space-y-2">
+                                <label class="block text-gray-700 text-sm font-semibold mb-2">1. What is your primary investment goal?</label>
+                                <div class="flex items-center">
+                                    <input class="form-radio h-4 w-4 text-blue-600 transition duration-150 ease-in-out" type="radio" name="q1" id="q1a" value="1" required>
+                                    <label class="ml-2 text-gray-700" for="q1a">Capital preservation and steady income</label>
                                 </div>
-                                <div class="mb-2">
-                                    <input class="mr-2 leading-tight" type="radio" name="q1" id="q1b" value="3">
-                                    <label class="text-gray-700" for="q1b">Balanced growth and income</label>
+                                <div class="flex items-center">
+                                    <input class="form-radio h-4 w-4 text-blue-600 transition duration-150 ease-in-out" type="radio" name="q1" id="q1b" value="3">
+                                    <label class="ml-2 text-gray-700" for="q1b">Balanced growth and income</label>
                                 </div>
-                                <div class="mb-2">
-                                    <input class="mr-2 leading-tight" type="radio" name="q1" id="q1c" value="5">
-                                    <label class="text-gray-700" for="q1c">Aggressive growth</label>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <label class="block text-gray-700 text-sm font-bold mb-2">2. How would you react to a 20% drop in your investment portfolio?</label>
-                                <div class="mb-2">
-                                    <input class="mr-2 leading-tight" type="radio" name="q2" id="q2a" value="1" required>
-                                    <label class="text-gray-700" for="q2a">Sell immediately to prevent further losses</label>
-                                </div>
-                                <div class="mb-2">
-                                    <input class="mr-2 leading-tight" type="radio" name="q2" id="q2b" value="3">
-                                    <label class="text-gray-700" for="q2b">Re-evaluate my investments and consider selling some</label>
-                                </div>
-                                <div class="mb-2">
-                                    <input class="mr-2 leading-tight" type="radio" name="q2" id="q2c" value="5">
-                                    <label class="text-gray-700" for="q2c">See it as a buying opportunity and invest more</label>
+                                <div class="flex items-center">
+                                    <input class="form-radio h-4 w-4 text-blue-600 transition duration-150 ease-in-out" type="radio" name="q1" id="q1c" value="5">
+                                    <label class="ml-2 text-gray-700" for="q1c">Aggressive growth</label>
                                 </div>
                             </div>
-                            <div class="mb-4">
-                                <label class="block text-gray-700 text-sm font-bold mb-2">3. What is your investment horizon?</label>
-                                <div class="mb-2">
-                                    <input class="mr-2 leading-tight" type="radio" name="q3" id="q3a" value="1" required>
-                                    <label class="text-gray-700" for="q3a">Less than 1 year</label>
+                            <div class="space-y-2">
+                                <label class="block text-gray-700 text-sm font-semibold mb-2">2. How would you react to a 20% drop in your investment portfolio?</label>
+                                <div class="flex items-center">
+                                    <input class="form-radio h-4 w-4 text-blue-600 transition duration-150 ease-in-out" type="radio" name="q2" id="q2a" value="1" required>
+                                    <label class="ml-2 text-gray-700" for="q2a">Sell immediately to prevent further losses</label>
                                 </div>
-                                <div class="mb-2">
-                                    <input class="mr-2 leading-tight" type="radio" name="q3" id="q3b" value="3">
-                                    <label class="text-gray-700" for="q3b">1-5 years</label>
+                                <div class="flex items-center">
+                                    <input class="form-radio h-4 w-4 text-blue-600 transition duration-150 ease-in-out" type="radio" name="q2" id="q2b" value="3">
+                                    <label class="ml-2 text-gray-700" for="q2b">Re-evaluate my investments and consider selling some</label>
                                 </div>
-                                <div class="mb-2">
-                                    <input class="mr-2 leading-tight" type="radio" name="q3" id="q3c" value="5">
-                                    <label class="text-gray-700" for="q3c">More than 5 years</label>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <label class="block text-gray-700 text-sm font-bold mb-2">4. How much investment knowledge do you possess?</label>
-                                <div class="mb-2">
-                                    <input class="mr-2 leading-tight" type="radio" name="q4" id="q4a" value="1" required>
-                                    <label class="text-gray-700" for="q4a">Limited</label>
-                                </div>
-                                <div class="mb-2">
-                                    <input class="mr-2 leading-tight" type="radio" name="q4" id="q4b" value="3">
-                                    <label class="text-gray-700" for="q4b">Moderate</label>
-                                </div>
-                                <div class="mb-2">
-                                    <input class="mr-2 leading-tight" type="radio" name="q4" id="q4c" value="5">
-                                    <label class="text-gray-700" for="q4c">Extensive</label>
+                                <div class="flex items-center">
+                                    <input class="form-radio h-4 w-4 text-blue-600 transition duration-150 ease-in-out" type="radio" name="q2" id="q2c" value="5">
+                                    <label class="ml-2 text-gray-700" for="q2c">See it as a buying opportunity and invest more</label>
                                 </div>
                             </div>
-                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Get My Risk Profile</button>
-                            <div class="mt-4" id="riskProfilerResult"></div>
+                            <div class="space-y-2">
+                                <label class="block text-gray-700 text-sm font-semibold mb-2">3. What is your investment horizon?</label>
+                                <div class="flex items-center">
+                                    <input class="form-radio h-4 w-4 text-blue-600 transition duration-150 ease-in-out" type="radio" name="q3" id="q3a" value="1" required>
+                                    <label class="ml-2 text-gray-700" for="q3a">Less than 1 year</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input class="form-radio h-4 w-4 text-blue-600 transition duration-150 ease-in-out" type="radio" name="q3" id="q3b" value="3">
+                                    <label class="ml-2 text-gray-700" for="q3b">1-5 years</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input class="form-radio h-4 w-4 text-blue-600 transition duration-150 ease-in-out" type="radio" name="q3" id="q3c" value="5">
+                                    <label class="ml-2 text-gray-700" for="q3c">More than 5 years</label>
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="block text-gray-700 text-sm font-semibold mb-2">4. How much investment knowledge do you possess?</label>
+                                <div class="flex items-center">
+                                    <input class="form-radio h-4 w-4 text-blue-600 transition duration-150 ease-in-out" type="radio" name="q4" id="q4a" value="1" required>
+                                    <label class="ml-2 text-gray-700" for="q4a">Limited</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input class="form-radio h-4 w-4 text-blue-600 transition duration-150 ease-in-out" type="radio" name="q4" id="q4b" value="3">
+                                    <label class="ml-2 text-gray-700" for="q4b">Moderate</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input class="form-radio h-4 w-4 text-blue-600 transition duration-150 ease-in-out" type="radio" name="q4" id="q4c" value="5">
+                                    <label class="ml-2 text-gray-700" for="q4c">Extensive</label>
+                                </div>
+                            </div>
+                            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75">Get My Risk Profile</button>
+                            <div class="mt-6 p-4 bg-blue-100 rounded-lg shadow-md text-blue-800 hidden" id="riskProfilerResult"></div>
                         </form>
                     `;
                     document.getElementById('riskProfilerForm').addEventListener('submit', calculateRiskProfile);
@@ -141,25 +143,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 case 'goal-planning':
                     modalTitle.textContent = 'Goal Planning';
                     modalBody.innerHTML = `
-                        <form id="goalPlanningForm">
-                            <div class="mb-4">
-                                <label for="goalName" class="block text-gray-700 text-sm font-bold mb-2">Goal Name</label>
-                                <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500 transition duration-200" id="goalName" placeholder="e.g., Retirement, Child's Education" required>
+                        <form id="goalPlanningForm" class="space-y-4 p-4 bg-gray-50 rounded-lg shadow-inner">
+                            <div>
+                                <label for="goalName" class="block text-gray-700 text-sm font-semibold mb-2">Goal Name</label>
+                                <input type="text" class="form-input mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 p-2" id="goalName" placeholder="e.g., Retirement, Child's Education" required>
                             </div>
-                            <div class="mb-4">
-                                <label for="goalAmount" class="block text-gray-700 text-sm font-bold mb-2">Target Amount (₹)</label>
-                                <input type="number" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500 transition duration-200" id="goalAmount" value="1000000" min="1" required>
+                            <div>
+                                <label for="goalAmount" class="block text-gray-700 text-sm font-semibold mb-2">Target Amount (₹)</label>
+                                <input type="number" class="form-input mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 p-2" id="goalAmount" value="1000000" min="1" required>
                             </div>
-                            <div class="mb-4">
-                                <label for="goalTimePeriod" class="block text-gray-700 text-sm font-bold mb-2">Time to Goal (Years)</label>
-                                <input type="number" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500 transition duration-200" id="goalTimePeriod" value="10" min="1" required>
+                            <div>
+                                <label for="goalTimePeriod" class="block text-gray-700 text-sm font-semibold mb-2">Time to Goal (Years)</label>
+                                <input type="number" class="form-input mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 p-2" id="goalTimePeriod" value="10" min="1" required>
                             </div>
-                            <div class="mb-4">
-                                <label for="goalExpectedReturn" class="block text-gray-700 text-sm font-bold mb-2">Expected Annual Return (%)</label>
-                                <input type="number" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500 transition duration-200" id="goalExpectedReturn" value="10" min="0.01" step="0.01" required>
+                            <div>
+                                <label for="goalExpectedReturn" class="block text-gray-700 text-sm font-semibold mb-2">Expected Annual Return (%)</label>
+                                <input type="number" class="form-input mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 p-2" id="goalExpectedReturn" value="10" min="0.01" step="0.01" required>
                             </div>
-                            <button type="submit" class="bg-blue-600 text-white font-bold py-2 px-6 rounded-full hover:bg-blue-700 transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-300 focus:ring-opacity-75">Calculate Required Investment</button>
-                            <div class="mt-4" id="goalPlanningResult"></div>
+                            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75">Calculate Required Investment</button>
+                            <div class="mt-6 p-4 bg-blue-100 rounded-lg shadow-md text-blue-800 hidden" id="goalPlanningResult"></div>
                         </form>
                     `;
                     document.getElementById('goalPlanningForm').addEventListener('submit', calculateGoalPlanning);
