@@ -9,33 +9,39 @@ function fetchMarketSummary() {
         skeletonDiv.classList.remove('hidden');
     }
 
-    fetch(`${API_BASE_URL}/market-summary`)
-        .then(response => response.json())
-        .then(data => {
-            const niftyTicker = document.getElementById('nifty-ticker');
-            const sensexTicker = document.getElementById('sensex-ticker');
-            const niftyMidcap50 = document.getElementById('nifty-midcap-ticker');
+    Promise.all([
+        fetch(`${API_BASE_URL}/nifty50-basic`).then(res => res.json()),
+        fetch(`${API_BASE_URL}/sensex-basic`).then(res => res.json()),
+        fetch(`${API_BASE_URL}/nifty-midcap50-basic`).then(res => res.json())
+    ])
+    .then(([niftyData, sensexData, niftyMidcapData]) => {
+        const niftyTicker = document.getElementById('nifty-ticker');
+        const sensexTicker = document.getElementById('sensex-ticker');
+        const niftyMidcap50 = document.getElementById('nifty-midcap-ticker');
 
-            if (niftyTicker) {
-                niftyTicker.innerHTML = `<span style='font-size: 1.5rem; font-weight: 600;'>${data.nifty_50.value.toLocaleString()}</span> <span style='font-size: 1rem; color:${data.nifty_50.change >= 0 ? '#388e3c' : '#d32f2f'}; font-weight: 600;'>${data.nifty_50.change >= 0 ? '+' : ''}${data.nifty_50.change} (${data.nifty_50.percent >= 0 ? '+' : ''}${data.nifty_50.percent}%)</span>`;
-                renderChart('nifty-chart', data.nifty_50.data, data.nifty_50.change);
-            }
+        if (niftyTicker) {
+            niftyTicker.innerHTML = `<span style='font-size: 1.5rem; font-weight: 600;'>${niftyData.lastPrice.toLocaleString()}</span> <span style='font-size: 1rem; color:${niftyData.change >= 0 ? '#388e3c' : '#d32f2f'}; font-weight: 600;'>${niftyData.change >= 0 ? '+' : ''}${niftyData.change.toFixed(2)} (${niftyData.pChange >= 0 ? '+' : ''}${niftyData.pChange.toFixed(2)}%)</span>`;
+            // Chart data is not available in the current API response
+            // renderChart('nifty-chart', niftyData.data, niftyData.change);
+        }
 
-            if (sensexTicker) {
-                sensexTicker.innerHTML = `<span style='font-size: 1.5rem; font-weight: 600;'>${data.sensex.value.toLocaleString()}</span> <span style='font-size: 1rem; color:${data.sensex.change >= 0 ? '#388e3c' : '#d32f2f'}; font-weight: 600;'>${data.sensex.change >= 0 ? '+' : ''}${data.sensex.change} (${data.sensex.percent >= 0 ? '+' : ''}${data.sensex.percent}%)</span>`;
-                renderChart('sensex-chart', data.sensex.data, data.sensex.change);
-            }
+        if (sensexTicker) {
+            sensexTicker.innerHTML = `<span style='font-size: 1.5rem; font-weight: 600;'>${sensexData.lastPrice.toLocaleString()}</span> <span style='font-size: 1rem; color:${sensexData.change >= 0 ? '#388e3c' : '#d32f2f'}; font-weight: 600;'>${sensexData.change >= 0 ? '+' : ''}${sensexData.change.toFixed(2)} (${sensexData.pChange >= 0 ? '+' : ''}${sensexData.pChange.toFixed(2)}%)</span>`;
+            // Chart data is not available in the current API response
+            // renderChart('sensex-chart', sensexData.data, sensexData.change);
+        }
 
-            if (niftyMidcap50) {
-                niftyMidcap50.innerHTML = `<span style='font-size: 1.5rem; font-weight: 600;'>${data.nifty_midcap_50.value.toLocaleString()}</span> <span style='font-size: 1rem; color:${data.nifty_midcap_50.change >= 0 ? '#388e3c' : '#d32f2f'}; font-weight: 600;'>${data.nifty_midcap_50.change >= 0 ? '+' : ''}${data.nifty_midcap_50.change} (${data.nifty_midcap_50.percent >= 0 ? '+' : ''}${data.nifty_midcap_50.percent}%)</span>`;
-                renderChart('nifty-midcap-chart', data.nifty_midcap_50.data, data.nifty_midcap_50.change);
-            }
+        if (niftyMidcap50) {
+            niftyMidcap50.innerHTML = `<span style='font-size: 1.5rem; font-weight: 600;'>${niftyMidcapData.lastPrice.toLocaleString()}</span> <span style='font-size: 1rem; color:${niftyMidcapData.change >= 0 ? '#388e3c' : '#d32f2f'}; font-weight: 600;'>${niftyMidcapData.change >= 0 ? '+' : ''}${niftyMidcapData.change.toFixed(2)} (${niftyMidcapData.pChange >= 0 ? '+' : ''}${niftyMidcapData.pChange.toFixed(2)}%)</span>`;
+            // Chart data is not available in the current API response
+            // renderChart('nifty-midcap-chart', niftyMidcapData.data, niftyMidcapData.change);
+        }
 
-            if (contentDiv && skeletonDiv) {
-                contentDiv.classList.remove('hidden');
-                skeletonDiv.classList.add('hidden');
-            }
-        })
+        if (contentDiv && skeletonDiv) {
+            contentDiv.classList.remove('hidden');
+            skeletonDiv.classList.add('hidden');
+        }
+    })
         .catch(error => {
             console.error('Error fetching market summary:', error);
             if (contentDiv && skeletonDiv) {
