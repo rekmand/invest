@@ -40,7 +40,6 @@ function fetchMarketSummary() {
         if (contentDiv && skeletonDiv) {
             contentDiv.classList.remove('hidden');
             skeletonDiv.classList.add('hidden');
-            contentDiv.insertAdjacentHTML('beforeend', '<p class="text-xs text-gray-500 text-center mt-2">Data may have a delay of 5min. For correct data, please refer to BSE/NSE webpage.</p>');
         }
     })
         .catch(error => {

@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Rekmand - Professional Mutual Fund Management and Investment Services.">
-    <meta name="keywords" content="Mutual Fund, Investment, Portfolio Management, Financial Planning, Rekmand">
+    <meta name="description" content="Rekmand - Professional Mutual Fund Management and Investment Services." data-lang-key="expertMutualFundManagement">
+    <meta name="keywords" content="Mutual Fund, Investment, Portfolio Management, Financial Planning, Rekmand" data-lang-key="keywords">
     <meta name="author" content="Rekmand">
     <meta property="og:title" content="Rekmand Investment">
-    <meta property="og:description" content="Expert mutual fund management with personalized service.">
+    <meta property="og:description" content="Expert mutual fund management with personalized service." data-lang-key="expertMutualFundManagement">
     <meta property="og:image" content="images/logo.png">
     <meta property="og:type" content="website">
     <link rel="icon" href="images/logo.png" type="image/png">
@@ -19,13 +19,28 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body class="bg-gray-50">
-    <header class="bg-blue-800 text-white py-4 tracking-wide shadow-lg">
+    <header class="bg-blue-800 text-white py-4 tracking-wide shadow-lg relative z-50">
         <div class="container mx-auto flex items-center justify-between px-4">
             <div class="flex items-center">
                 <img src="images/logo.png" alt="Rekmand Logo" class="w-16 h-16 object-contain bg-white shadow-md p-1 mr-3" srcset="images/logo_small.png 64w, images/logo.png 256w" sizes="(max-width: 768px) 64px, (max-width: 1200px) 128px, 256px">
                 <div>
-                    <h1 class="text-3xl md:text-4xl font-bold tracking-wide">Rekmand</h1>
-                    <p class="text-sm md:text-lg text-blue-100">Professional Mutual Fund Management</p>
+                    <h1 class="text-3xl md:text-4xl font-bold tracking-wide" data-lang-key="rekmandName">Rekmand</h1>
+                    <p class="text-sm md:text-lg text-blue-100" data-lang-key="professionalMutualFundManagement">Professional Mutual Fund Management</p>
+                </div>
+            </div>
+            <!-- Language Dropdown -->
+            <div class="relative group">
+                <button class="text-white font-semibold py-2 px-4 rounded-lg transition duration-300 hover:bg-blue-700" id="language-dropdown-button" data-lang-key="language">Language</button>
+                <div class="absolute hidden group-hover:block bg-white shadow-xl rounded-md py-2 z-10 right-0" id="language-dropdown-menu">
+                    <a class="block px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer" data-lang="en">English</a>
+                    <a class="block px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer" data-lang="hi">हिंदी</a>
+                    <a class="block px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer" data-lang="en_hi">Hinglish</a>  
+                    <!-- <a class="block px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer" data-lang="mr">मराठी</a>
+                    <a class="block px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer" data-lang="gu">ગુજરાતી</a>
+                    <a class="block px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer" data-lang="ta">தமிழ்</a>
+                    <a class="block px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer" data-lang="te">తెలుగు</a> -->
+                    <a class="block px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer" data-lang="bn">বাংলা</a>
+                    <!-- <a class="block px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer" data-lang="kn">ಕನ್ನಡ</a> -->
                 </div>
             </div>
         </div>
@@ -33,14 +48,14 @@
 
     <nav class="bg-gray-800 shadow-xl tracking-wide sticky top-0 z-40">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <a class="text-white font-bold text-xl md:text-2xl tracking-wide" href="#home">Rekmand Investment</a>
+            <a class="text-white font-bold text-xl md:text-2xl tracking-wide" data-lang-key="rekmandName" href="#home">Rekmand Investment</a>
             <div class="hidden md:flex items-center space-x-6">
-                <a class="text-white font-semibold px-4 py-2 rounded-lg transition duration-300 hover:bg-gray-700" href="#services">Services</a>
-                <a class="text-white font-semibold px-4 py-2 rounded-lg transition duration-300 hover:bg-gray-700" href="#contact">Contact</a>
+                <a class="text-white font-semibold px-4 py-2 rounded-lg transition duration-300 hover:bg-gray-700" href="#services" data-lang-key="services">Services</a>
+                <a class="text-white font-semibold px-4 py-2 rounded-lg transition duration-300 hover:bg-gray-700" href="#contact" data-lang-key="contact">Contact</a>
 
                 <!-- NJ Dropdown -->
                 <div class="relative group">
-                    <button class="text-white font-semibold px-4 py-2 rounded-lg transition duration-300 hover:bg-gray-700">NJ Portal ▼</button>
+                    <button class="text-white font-semibold px-4 py-2 rounded-lg transition duration-300 hover:bg-gray-700" data-lang-key="njPortal">NJ Portal ▼</button>
                     <div class="absolute hidden group-hover:block bg-white shadow-xl rounded-md py-2 z-10">
                         <a class="block px-4 py-2 text-gray-800 hover:bg-gray-100" href="https://ewa.njindiaonline.com/ewa/login" target="_blank">NJ E-Wealth</a>
                         <a class="block px-4 py-2 text-gray-800 hover:bg-gray-100" href="https://www.njindiaonline.in/cdesk/login.fin" target="_blank">NJ Client Desk</a>
@@ -48,11 +63,11 @@
                 </div>
 
                 <!-- Prudent Link -->
-                <a class="text-white font-semibold px-4 py-2 rounded-lg transition duration-300 hover:bg-gray-700" href="https://www.prudentcorporate.com/ccd/index.aspx" target="_blank">Prudent Client Desk</a>
+                <a class="text-white font-semibold px-4 py-2 rounded-lg transition duration-300 hover:bg-gray-700" href="https://www.prudentcorporate.com/ccd/index.aspx" target="_blank" data-lang-key="prudentClientDesk">Prudent Client Desk</a>
 
                 <!-- FundzBazzar Dropdown -->
                 <div class="relative group">
-                    <button class="text-white font-semibold px-4 py-2 rounded-lg transition duration-300 hover:bg-gray-700">FundzBazzar Portal ▼</button>
+                    <button class="text-white font-semibold px-4 py-2 rounded-lg transition duration-300 hover:bg-gray-700" data-lang-key="fundzBazzarPortal">FundzBazzar Portal ▼</button>
                     <div class="absolute hidden group-hover:block bg-white shadow-xl rounded-md py-2 z-10">
                         <a class="block px-4 py-2 text-gray-800 hover:bg-gray-100" href="https://www.fundzbazar.com/signin" target="_blank">FundzBazzar Signin</a>
                         <a class="block px-4 py-2 text-gray-800 hover:bg-gray-100" href="https://broking.fundzbazar.com/" target="_blank">FundzBazzar Broking</a>
@@ -60,7 +75,9 @@
                 </div>
                 
                 <!-- Amfiindia Link -->
-                <a class="text-white font-semibold px-4 py-2 rounded-lg transition duration-300 hover:bg-gray-700" href="https://www.amfiindia.com/" target="_blank">Amfiindia</a>
+                <a class="text-white font-semibold px-4 py-2 rounded-lg transition duration-300 hover:bg-gray-700" href="https://www.amfiindia.com/" target="_blank" data-lang-key="amfiindia">Amfiindia</a>
+
+                
             </div>
             <button class="md:hidden text-white focus:outline-none" id="mobile-menu-button" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
@@ -68,24 +85,24 @@
         </div>
         <!-- Mobile Menu -->
         <div class="md:hidden hidden bg-gray-700 py-2 shadow-inner" id="mobile-menu" role="menu" aria-labelledby="mobile-menu-button">
-            <a class="block text-white px-4 py-2 hover:bg-gray-600" href="#services">Services</a>
-            <a class="block text-white px-4 py-2 hover:bg-gray-600" href="#contact">Contact</a>
-            <a class="block text-white px-4 py-2 hover:bg-gray-600" href="https://ewa.njindiaonline.com/ewa/login" target="_blank">NJ E-Wealth</a>
-            <a class="block text-white px-4 py-2 hover:bg-gray-600" href="https://www.njindiaonline.in/cdesk/login.fin" target="_blank">NJ Client Desk</a>
-            <a class="block text-white px-4 py-2 hover:bg-gray-600" href="https://www.prudentcorporate.com/ccd/index.aspx" target="_blank">Prudent Client Desk</a>
-            <a class="block text-white px-4 py-2 hover:bg-gray-600" href="https://www.fundzbazar.com/signin" target="_blank">FundzBazzar Signin</a>
-            <a class="block text-white px-4 py-2 hover:bg-gray-600" href="https://broking.fundzbazar.com/" target="_blank">FundzBazzar Broking</a>
-            <a class="block text-white px-4 py-2 hover:bg-gray-600" href="https://www.amfiindia.com/" target="_blank">Amfiindia</a>
+            <a class="block text-white px-4 py-2 hover:bg-gray-600" href="#services" data-lang-key="services">Services</a>
+            <a class="block text-white px-4 py-2 hover:bg-gray-600" href="#contact" data-lang-key="contact">Contact</a>
+            <a class="block text-white px-4 py-2 hover:bg-gray-600" href="https://ewa.njindiaonline.com/ewa/login" target="_blank" data-lang-key="njEWealth">NJ E-Wealth</a>
+            <a class="block text-white px-4 py-2 hover:bg-gray-600" href="https://www.njindiaonline.in/cdesk/login.fin" target="_blank" data-lang-key="njClientDesk">NJ Client Desk</a>
+            <a class="block text-white px-4 py-2 hover:bg-gray-600" href="https://www.prudentcorporate.com/ccd/index.aspx" target="_blank" data-lang-key="prudentClientDesk">Prudent Client Desk</a>
+            <a class="block text-white px-4 py-2 hover:bg-gray-600" href="https://www.fundzbazar.com/signin" target="_blank" data-lang-key="fundzBazzarSignin">FundzBazzar Signin</a>
+            <a class="block text-white px-4 py-2 hover:bg-gray-600" href="https://broking.fundzbazar.com/" target="_blank" data-lang-key="fundzBazzarBroking">FundzBazzar Broking</a>
+            <a class="block text-white px-4 py-2 hover:bg-gray-600" href="https://www.amfiindia.com/" target="_blank" data-lang-key="amfiindia">Amfiindia</a>
         </div>
     </nav>
 
     <section class="relative py-16 md:py-24 text-center overflow-hidden bg-gray-100 font-sans" id="home" data-aos="fade-up">
         <div class="container mx-auto relative z-10 px-4">
-            <h2 class="text-4xl md:text-6xl font-extrabold mb-4 text-blue-800">Welcome to Rekmand</h2>
-            <p class="text-lg md:text-xl mb-8 text-gray-700">Expert mutual fund management with personalized service</p>
+            <h2 class="text-4xl md:text-6xl font-extrabold mb-4 text-blue-800" data-lang-key="welcomeToRekmand">Welcome to Rekmand</h2>
+            <p class="text-lg md:text-xl mb-8 text-gray-700" data-lang-key="expertMutualFundManagement">Expert mutual fund management with personalized service</p>
             <div class="flex flex-col md:flex-row justify-center gap-6 mt-10">
-                <a href="#services" class="bg-blue-600 text-white font-semibold py-3 px-10 rounded-full shadow-lg hover:bg-blue-700 transition duration-300">Explore Mutual Funds</a>
-                <a href="#contact" class="bg-gray-600 text-white font-semibold py-3 px-10 rounded-full shadow-lg hover:bg-gray-700 transition duration-300">Start Investing Today</a>
+                <a href="#services" class="bg-blue-600 text-white font-semibold py-3 px-10 rounded-full shadow-lg hover:bg-blue-700 transition duration-300" data-lang-key="exploreMutualFunds">Explore Mutual Funds</a>
+                <a href="#contact" class="bg-gray-600 text-white font-semibold py-3 px-10 rounded-full shadow-lg hover:bg-gray-700 transition duration-300" data-lang-key="startInvestingToday">Start Investing Today</a>
             </div>
         </div>
         <img src="images/Financial_Planning.png" alt="Financial Planning" class="absolute bottom-0 right-0 max-w-sm opacity-10 pointer-events-none hidden md:block" loading="lazy" srcset="images/Financial_Planning_small.png 400w, images/Financial_Planning.png 1200w" sizes="(max-width: 768px) 400px, (max-width: 1200px) 800px, 1200px">
@@ -93,20 +110,21 @@
 
     <section class="py-12 md:py-20 bg-white border-t border-b border-gray-200 font-sans" data-aos="fade-up" id="market-overview">
         <div class="container mx-auto px-4">
-            <h3 class="mb-8 text-center text-blue-800 font-bold text-3xl md:text-4xl">Market Overview</h3>
+            <h3 class="mb-8 text-center text-blue-800 font-bold text-3xl md:text-4xl" data-lang-key="marketOverview">Market Overview</h3>
+            <p class="text-xs text-gray-500 text-center mb-4" data-lang-key="dataDelayNote">Data may have a delay of 5min. For correct data, please refer to BSE/NSE webpage.</p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="market-overview-content">
                 <div class="bg-white rounded-lg shadow-md p-6 text-center">
-                    <h5 class="text-xl font-semibold mb-2 text-blue-800">Nifty 50</h5>
+                    <h5 class="text-xl font-semibold mb-2 text-blue-800"><a href="https://www.nseindia.com/index-tracker/NIFTY%2050" target="_blank" class="hover:underline" data-lang-key="nifty50">Nifty 50</a></h5>
                     <div id="nifty-ticker" class="text-3xl font-bold mb-2 text-gray-800">Loading...</div>
                     <div id="nifty-chart" style="height: 80px;"></div>
                 </div>
                 <div class="bg-white rounded-lg shadow-md p-6 text-center">
-                    <h5 class="text-xl font-semibold mb-2 text-blue-800">Sensex</h5>
+                    <h5 class="text-xl font-semibold mb-2 text-blue-800"><a href="https://www.bseindia.com/sensex/code/16/" target="_blank" class="hover:underline" data-lang-key="sensex">Sensex</a></h5>
                     <div id="sensex-ticker" class="text-3xl font-bold mb-2 text-gray-800">Loading...</div>
                     <div id="sensex-chart" style="height: 80px;"></div>
                 </div>
                 <div class="bg-white rounded-lg shadow-md p-6 text-center">
-                    <h5 class="text-xl font-semibold mb-2 text-blue-800">Nifty Midcap 50</h5>
+                    <h5 class="text-xl font-semibold mb-2 text-blue-800"><a href="https://www.nseindia.com/index-tracker/NIFTY%20MIDCAP%2050" target="_blank" class="hover:underline" data-lang-key="niftyMidcap50">Nifty Midcap 50</a></h5>
                     <div id="nifty-midcap-ticker" class="text-3xl font-bold mb-2 text-gray-800">Loading...</div>
                     <div id="nifty-midcap-chart"></div>
                 </div>
@@ -122,7 +140,7 @@
     
     <section class="py-12 md:py-16 bg-gray-100" id="top-funds" data-aos="fade-up">
         <div class="container mx-auto px-4">
-            <h3 class="mb-8 text-center text-blue-800 font-bold text-3xl md:text-4xl">Top 3 Mutual Funds</h3>
+            <h3 class="mb-8 text-center text-blue-800 font-bold text-3xl md:text-4xl" data-lang-key="top3MutualFunds">Top 3 Mutual Funds</h3>
             <div id="top-funds-container" class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <!-- Top funds will be loaded here -->
             </div>
@@ -138,31 +156,31 @@
 
     <section class="py-12 md:py-20 bg-white" id="tools" data-aos="fade-up">
         <div class="container mx-auto px-4">
-            <h3 class="mb-8 text-center text-blue-800 font-bold text-3xl md:text-4xl">Investment Tools</h3>
+            <h3 class="mb-8 text-center text-blue-800 font-bold text-3xl md:text-4xl" data-lang-key="investmentTools">Investment Tools</h3>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="bg-white rounded-lg shadow-md p-6 text-center">
                     <span class="text-5xl mb-3">📈</span>
-                    <h5 class="text-xl font-semibold mb-2 text-blue-800">SIP Calculator</h5>
-                    <p class="text-sm text-gray-600 mb-4">Estimate your returns from monthly SIP investments.</p>
-                    <a href="#" class="bg-blue-600 text-white font-semibold py-2 px-6 rounded-full hover:bg-blue-700 transition duration-300 mt-auto calculator-btn" data-calculator-type="sip">Calculate</a>
+                    <h5 class="text-xl font-semibold mb-2 text-blue-800" data-lang-key="sipCalculator">SIP Calculator</h5>
+                    <p class="text-sm text-gray-600 mb-4" data-lang-key="sipCalculatorDescription">Estimate your returns from monthly SIP investments.</p>
+                    <a href="#" class="bg-blue-600 text-white font-semibold py-2 px-6 rounded-full hover:bg-blue-700 transition duration-300 mt-auto calculator-btn" data-calculator-type="sip" data-lang-key="calculate">Calculate</a>
                 </div>
                 <div class="bg-white rounded-lg shadow-md p-6 text-center">
                     <span class="text-5xl mb-3">💰</span>
-                    <h5 class="text-xl font-semibold mb-2 text-blue-800">Lumpsum Calculator</h5>
-                    <p class="text-sm text-gray-600 mb-4">Calculate future value of a one-time investment.</p>
-                    <a href="#" class="bg-blue-600 text-white font-semibold py-2 px-6 rounded-full hover:bg-blue-700 transition duration-300 mt-auto calculator-btn" data-calculator-type="lumpsum">Calculate</a>
+                    <h5 class="text-xl font-semibold mb-2 text-blue-800" data-lang-key="lumpsumCalculator">Lumpsum Calculator</h5>
+                    <p class="text-sm text-gray-600 mb-4" data-lang-key="lumpsumCalculatorDescription">Calculate future value of a one-time investment.</p>
+                    <a href="#" class="bg-blue-600 text-white font-semibold py-2 px-6 rounded-full hover:bg-blue-700 transition duration-300 mt-auto calculator-btn" data-calculator-type="lumpsum" data-lang-key="calculate">Calculate</a>
                 </div>
                 <div class="bg-white rounded-lg shadow-md p-6 text-center">
                     <span class="text-5xl mb-3">🛡️</span>
-                    <h5 class="text-xl font-semibold mb-2 text-blue-800">Risk Profiler</h5>
-                    <p class="text-sm text-gray-600 mb-4">Assess your risk profile for better investment decisions.</p>
-                    <a href="#" class="bg-blue-600 text-white font-semibold py-2 px-6 rounded-full hover:bg-blue-700 transition duration-300 mt-auto calculator-btn" data-calculator-type="risk-profiler">Calculate</a>
+                    <h5 class="text-xl font-semibold mb-2 text-blue-800" data-lang-key="riskProfiler">Risk Profiler</h5>
+                    <p class="text-sm text-gray-600 mb-4" data-lang-key="riskProfilerDescription">Assess your risk profile for better investment decisions.</p>
+                    <a href="#" class="bg-blue-600 text-white font-semibold py-2 px-6 rounded-full hover:bg-blue-700 transition duration-300 mt-auto calculator-btn" data-calculator-type="risk-profiler" data-lang-key="calculate">Calculate</a>
                 </div>
                 <div class="bg-white rounded-lg shadow-md p-6 text-center">
                     <span class="text-5xl mb-3">🎯</span>
-                    <h5 class="text-xl font-semibold mb-2 text-blue-800">Goal Planning</h5>
-                    <p class="text-sm text-gray-600 mb-4">Plan and track your financial goals with ease.</p>
-                    <a href="#" class="bg-blue-600 text-white font-semibold py-2 px-6 rounded-full hover:bg-blue-700 transition duration-300 mt-auto calculator-btn" data-calculator-type="goal-planning">Calculate</a>
+                    <h5 class="text-xl font-semibold mb-2 text-blue-800" data-lang-key="goalPlanning">Goal Planning</h5>
+                    <p class="text-sm text-gray-600 mb-4" data-lang-key="goalPlanningDescription">Plan and track your financial goals with ease.</p>
+                    <a href="#" class="bg-blue-600 text-white font-semibold py-2 px-6 rounded-full hover:bg-blue-700 transition duration-300 mt-auto calculator-btn" data-calculator-type="goal-planning" data-lang-key="calculate">Calculate</a>
                 </div>
             </div>
         </div>
@@ -170,27 +188,27 @@
 
     <section class="py-12 md:py-16 bg-gray-100" id="services" data-aos="fade-up">
         <div class="container mx-auto px-4">
-            <h2 class="text-center mb-8 text-blue-800 font-bold text-3xl md:text-4xl">Our Services</h2>
+            <h2 class="text-center mb-8 text-blue-800 font-bold text-3xl md:text-4xl" data-lang-key="ourServices">Our Services</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="bg-white rounded-lg shadow-md p-6 text-center">
                     <span class="text-5xl mb-3">💼</span>
-                    <h5 class="text-xl font-semibold mb-2 text-blue-800">Portfolio Management</h5>
-                    <p class="text-sm text-gray-600">Customized portfolio strategies to help you achieve your financial goals.</p>
+                    <h5 class="text-xl font-semibold mb-2 text-blue-800" data-lang-key="portfolioManagement">Portfolio Management</h5>
+                    <p class="text-sm text-gray-600" data-lang-key="portfolioManagementDescription">Customized portfolio strategies to help you achieve your financial goals.</p>
                 </div>
                 <div class="bg-white rounded-lg shadow-md p-6 text-center">
                     <span class="text-5xl mb-3">📊</span>
-                    <h5 class="text-xl font-semibold mb-2 text-blue-800">Mutual Fund Investment</h5>
-                    <p class="text-sm text-gray-600">Expert guidance for investing in top-performing mutual funds.</p>
+                    <h5 class="text-xl font-semibold mb-2 text-blue-800" data-lang-key="mutualFundInvestment">Mutual Fund Investment</h5>
+                    <p class="text-sm text-gray-600" data-lang-key="mutualFundInvestmentDescription">Expert guidance for investing in top-performing mutual funds.</p>
                 </div>
                 <div class="bg-white rounded-lg shadow-md p-6 text-center">
                     <span class="text-5xl mb-3">📝</span>
-                    <h5 class="text-xl font-semibold mb-2 text-blue-800">Financial Planning</h5>
-                    <p class="text-sm text-gray-600">Comprehensive financial planning for a secure future.</p>
+                    <h5 class="text-xl font-semibold mb-2 text-blue-800" data-lang-key="financialPlanning">Financial Planning</h5>
+                    <p class="text-sm text-gray-600" data-lang-key="financialPlanningDescription">Comprehensive financial planning for a secure future.</p>
                 </div>
                 <div class="bg-white rounded-lg shadow-md p-6 text-center">
                     <span class="text-5xl mb-3">🤝</span>
-                    <h5 class="text-xl font-semibold mb-2 text-blue-800">Personalized Advisory</h5>
-                    <p class="text-sm text-gray-600">One-on-one advisory to help you make informed investment decisions.</p>
+                    <h5 class="text-xl font-semibold mb-2 text-blue-800" data-lang-key="personalizedAdvisory">Personalized Advisory</h5>
+                    <p class="text-sm text-gray-600" data-lang-key="personalizedAdvisoryDescription">One-on-one advisory to help you make informed investment decisions.</p>
                 </div>
             </div>
         </div>
@@ -198,23 +216,23 @@
     
     <section class="py-12 md:py-20 bg-white" id="faq" data-aos="fade-up">
         <div class="container mx-auto px-4">
-            <h2 class="text-center mb-8 text-blue-800 font-bold text-3xl md:text-4xl">Frequently Asked Questions</h2>
+            <h2 class="text-center mb-8 text-blue-800 font-bold text-3xl md:text-4xl" data-lang-key="faq">Frequently Asked Questions</h2>
             <div class="space-y-4">
                 <div class="bg-white rounded-lg shadow-md p-6">
-                    <h5 class="text-xl font-semibold mb-2 text-blue-800">What is a Mutual Fund?</h5>
-                    <p class="text-gray-700">A mutual fund is a professionally managed investment fund that pools money from many investors to purchase securities.</p>
+                    <h5 class="text-xl font-semibold mb-2 text-blue-800" data-lang-key="whatIsMutualFund">What is a Mutual Fund?</h5>
+                    <p class="text-gray-700" data-lang-key="whatIsMutualFundDescription">A mutual fund is a professionally managed investment fund that pools money from many investors to purchase securities.</p>
                 </div>
                 <div class="bg-white rounded-lg shadow-md p-6">
-                    <h5 class="text-xl font-semibold mb-2 text-blue-800">How do I start investing with Rekmand?</h5>
-                    <p class="text-gray-700">Starting your investment journey with Rekmand is simple. Contact us through the form on this page or by phone/email to schedule a consultation.</p>
+                    <h5 class="text-xl font-semibold mb-2 text-blue-800" data-lang-key="howToStartInvesting">How do I start investing with Rekmand?</h5>
+                    <p class="text-gray-700" data-lang-key="howToStartInvestingDescription">Starting your investment journey with Rekmand is simple. Contact us through the form on this page or by phone/email to schedule a consultation.</p>
                 </div>
                 <div class="bg-white rounded-lg shadow-md p-6">
-                    <h5 class="text-xl font-semibold mb-2 text-blue-800">What are the risks involved in mutual fund investments?</h5>
-                    <p class="text-gray-700">All mutual fund investments are subject to market risks. It's important to read all scheme related documents carefully.</p>
+                    <h5 class="text-xl font-semibold mb-2 text-blue-800" data-lang-key="risksInvolved">What are the risks involved in mutual fund investments?</h5>
+                    <p class="text-gray-700" data-lang-key="risksInvolvedDescription">All mutual fund investments are subject to market risks. It's important to read all scheme related documents carefully.</p>
                 </div>
                 <div class="bg-white rounded-lg shadow-md p-6">
-                    <h5 class="text-xl font-semibold mb-2 text-blue-800">Do you offer personalized financial planning?</h5>
-                    <p class="text-gray-700">Yes, we offer comprehensive and personalized financial planning services to help you achieve your financial objectives.</p>
+                    <h5 class="text-xl font-semibold mb-2 text-blue-800" data-lang-key="personalizedFinancialPlanning">Do you offer personalized financial planning?</h5>
+                    <p class="text-gray-700" data-lang-key="personalizedFinancialPlanningDescription">Yes, we offer comprehensive and personalized financial planning services to help you achieve your financial objectives.</p>
                 </div>
             </div>
         </div>
@@ -222,39 +240,39 @@
 
     <section class="py-12 md:py-20 bg-gray-100" id="contact" data-aos="fade-up">
         <div class="container mx-auto px-4">
-            <h2 class="text-center mb-8 text-blue-800 font-bold text-3xl md:text-4xl">Get in Touch</h2>
+            <h2 class="text-center mb-8 text-blue-800 font-bold text-3xl md:text-4xl" data-lang-key="getInTouch">Get in Touch</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
                 <div class="bg-white rounded-lg shadow-md p-6">
-                    <h5 class="text-2xl font-bold mb-4 text-blue-800">Contact Information</h5>
+                    <h5 class="text-2xl font-bold mb-4 text-blue-800" data-lang-key="contactInformation">Contact Information</h5>
                     <p class="mb-4 text-gray-700 flex items-center"><span class="text-2xl mr-3 text-blue-500">📧</span> <a href="mailto:mandal.rekha@gmail.com" class="text-blue-700 hover:underline">mandal.rekha@gmail.com</a></p>
                     <p class="mb-4 text-gray-700 flex items-center"><span class="text-2xl mr-3 text-green-500">📱</span> <a href="tel:+918826155883" class="text-blue-700 hover:underline">+91 8826155883</a></p>
-                    <p class="mb-0 text-gray-500 flex items-center"><span class="text-2xl mr-3 text-red-500">📍</span> <em>Physical address coming soon</em></p>
+                    <p class="mb-0 text-gray-500 flex items-center"><span class="text-2xl mr-3 text-red-500">📍</span> <em data-lang-key="physicalAddressComingSoon">Physical address coming soon</em></p>
                     <div class="mt-6 text-center">
-                        <div class="bg-blue-100 text-blue-800 px-4 py-3 rounded-lg shadow-inner" role="alert">Map integration coming soon</div>
+                        <div class="bg-blue-100 text-blue-800 px-4 py-3 rounded-lg shadow-inner" role="alert" data-lang-key="mapIntegrationComingSoon">Map integration coming soon</div>
                     </div>
                 </div>
                 <div class="bg-white rounded-lg shadow-md p-6 h-full">
-                    <h5 class="text-2xl font-bold mb-4 text-blue-800">Contact Form</h5>
+                    <h5 class="text-2xl font-bold mb-4 text-blue-800" data-lang-key="contactForm">Contact Form</h5>
                     <div id="contactForm">
                         <div class="mb-4 text-left">
-                            <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
-                            <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" placeholder="Your Name" required>
+                            <label for="name" class="block text-gray-700 text-sm font-bold mb-2" data-lang-key="name">Name</label>
+                            <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" data-lang-key="yourNamePlaceholder" placeholder="Your Name" required>
                         </div>
                         <div class="mb-4 text-left">
-                            <label for="contact" class="block text-gray-700 text-sm font-bold mb-2">Contact Number</label>
-                            <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="contact-number" placeholder="Your Contact Number" required>
+                            <label for="contact" class="block text-gray-700 text-sm font-bold mb-2" data-lang-key="contactNumber">Contact Number</label>
+                            <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="contact-number" data-lang-key="yourContactNumberPlaceholder" placeholder="Your Contact Number" required>
                         </div>
                         <div class="mb-4 text-left">
-                            <label for="subject" class="block text-gray-700 text-sm font-bold mb-2">Subject</label>
-                            <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="subject" placeholder="Subject of your message" required>
+                            <label for="subject" class="block text-gray-700 text-sm font-bold mb-2" data-lang-key="subject">Subject</label>
+                            <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="subject" data-lang-key="subjectOfYourMessagePlaceholder" placeholder="Subject of your message" required>
                         </div>
                         <div class="mb-4 text-left">
-                            <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Message</label>
-                            <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32" id="message" placeholder="How can we help you?" required></textarea>
+                            <label for="message" class="block text-gray-700 text-sm font-bold mb-2" data-lang-key="message">Message</label>
+                            <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32" id="message" data-lang-key="howCanWeHelpYouPlaceholder" placeholder="How can we help you?" required></textarea>
                         </div>
                         <div class="text-right">
                             <button type="button" class="bg-blue-600 text-white font-bold py-2 px-6 rounded-full hover:bg-blue-700 transition duration-300" id="contact-submit-btn">
-                                <span id="button-text">Send Message</span>
+                                <span id="button-text" data-lang-key="sendMessage">Send Message</span>
                             </button>
                         </div>
                     </div>
@@ -265,13 +283,14 @@
 
     <footer class="bg-gray-800 text-white text-center py-6">
         <div class="container mx-auto px-4">
-            <p class="text-sm md:text-base">&copy; 2024 Rekmand Mutual Fund Services. All rights reserved.</p>
+            <p class="text-sm md:text-base">&copy; 2024 Rekmand Mutual Fund Services. <span data-lang-key="allRightsReserved">All rights reserved.</span></p>
         </div>
     </footer>
 
     
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script src="js/config.js"></script>
+    <script src="js/language.js"></script>
     <script src="js/script.js"></script>
     <script src="js/marketSummary.js"></script>
     <script src="js/topFunds.js"></script>
