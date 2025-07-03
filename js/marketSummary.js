@@ -22,24 +22,25 @@ function fetchMarketSummary() {
         if (niftyTicker) {
             niftyTicker.innerHTML = `<span style='font-size: 1.5rem; font-weight: 600;'>${niftyData.lastPrice.toLocaleString()}</span> <span style='font-size: 1rem; color:${niftyData.change >= 0 ? '#388e3c' : '#d32f2f'}; font-weight: 600;'>${niftyData.change >= 0 ? '+' : ''}${niftyData.change.toFixed(2)} (${niftyData.pChange >= 0 ? '+' : ''}${niftyData.pChange.toFixed(2)}%)</span>`;
             // Chart data is not available in the current API response
-            // renderChart('nifty-chart', niftyData.data, niftyData.change);
+            renderChart('nifty-chart', niftyData.data, niftyData.change);
         }
 
         if (sensexTicker) {
             sensexTicker.innerHTML = `<span style='font-size: 1.5rem; font-weight: 600;'>${sensexData.lastPrice.toLocaleString()}</span> <span style='font-size: 1rem; color:${sensexData.change >= 0 ? '#388e3c' : '#d32f2f'}; font-weight: 600;'>${sensexData.change >= 0 ? '+' : ''}${sensexData.change.toFixed(2)} (${sensexData.pChange >= 0 ? '+' : ''}${sensexData.pChange.toFixed(2)}%)</span>`;
             // Chart data is not available in the current API response
-            // renderChart('sensex-chart', sensexData.data, sensexData.change);
+            renderChart('sensex-chart', sensexData.data, sensexData.change);
         }
 
         if (niftyMidcap50) {
             niftyMidcap50.innerHTML = `<span style='font-size: 1.5rem; font-weight: 600;'>${niftyMidcapData.lastPrice.toLocaleString()}</span> <span style='font-size: 1rem; color:${niftyMidcapData.change >= 0 ? '#388e3c' : '#d32f2f'}; font-weight: 600;'>${niftyMidcapData.change >= 0 ? '+' : ''}${niftyMidcapData.change.toFixed(2)} (${niftyMidcapData.pChange >= 0 ? '+' : ''}${niftyMidcapData.pChange.toFixed(2)}%)</span>`;
             // Chart data is not available in the current API response
-            // renderChart('nifty-midcap-chart', niftyMidcapData.data, niftyMidcapData.change);
+            renderChart('nifty-midcap-chart', niftyMidcapData.data, niftyMidcapData.change);
         }
 
         if (contentDiv && skeletonDiv) {
             contentDiv.classList.remove('hidden');
             skeletonDiv.classList.add('hidden');
+            contentDiv.insertAdjacentHTML('beforeend', '<p class="text-xs text-gray-500 text-center mt-2">Data may have a delay of 5min. For correct data, please refer to BSE/NSE webpage.</p>');
         }
     })
         .catch(error => {

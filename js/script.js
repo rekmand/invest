@@ -3,6 +3,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     fetchMarketSummary();
     fetchTopFunds();
+
+    // Auto-refresh market summary every 5 minutes (300000 milliseconds)
+    setInterval(fetchMarketSummary, 300000);
     
 
     AOS.init();
